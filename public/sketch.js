@@ -34,6 +34,8 @@ let currentPlacedState;
 let currentTree;
 
 let tempTreeList = [];
+let tempTreeSprite = [];
+
 
 function preload(){
     imageTree1 = loadImage('test_tree.png');
@@ -76,7 +78,6 @@ function setup() {
     //   socket = io.connect('http://localhost:3000');
 }
 
-let tree;
 
 function mouseHandle(){
     if (currentSelectState == selectedState.SELECTED){
@@ -84,14 +85,22 @@ function mouseHandle(){
         
         // TODO: Bounding box avoid too much tree overlap algorithm
         if (currentTree == treeType.TREE1){
-            tree = createSprite(mouseX,mouseY,imageTree1Width,imageTree1Height)
+            let tree = createSprite(mouseX,mouseY,imageTree1Width,imageTree1Height)
             tree.addImage(imageTree1);
-            // image(imageTree1, mouseX - imageTree1Width/2, mouseY - imageTree1Height/2)
+            tree.setCollider('rectangle',0,0,30,30);
+            tree.debug = true;
+            tempTreeSprite.push(tree);
+
         } else if (currentTree == treeType.TREE2) {
-            tree = createSprite(mouseX,mouseY,imageTree2Width,imageTree2Height)
+            let tree = createSprite(mouseX,mouseY,imageTree2Width,imageTree2Height)
             tree.addImage(imageTree2);
-            // image(imageTree2, mouseX - imageTree2Width/2, mouseY - imageTree2Height/2)
+            tree.setCollider('rectangle',0,0,30,30);
+            tree.debug = true;
+            tempTreeSprite.push(tree);
         }
+
+        console.log(tempTreeSprite);
+
         tempTreeList.push({
             "x": mouseX,
             "y": mouseY,
@@ -103,16 +112,18 @@ function mouseHandle(){
         currentTree = treeType.NONE;
 
     }
-    // for (let i = 0; i < 100; i++){
 
-    //     image(img, Math.floor(Math.random() * WIDTH), Math.floor(Math.random() * HEIGHT));
-    // }
+    //To delete the sprites
+    if (currentSelectState == selectedState.NONE_SELECTED){
+        
+    }
+
+
 }
 
 
 function draw(){
-    console.log(tree)
-    drawSprites()
+    drawSprites();
 }
 
 
