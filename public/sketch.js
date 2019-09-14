@@ -1,54 +1,86 @@
 var socket;
-var r;
-var g;
-var b;
 var slider;
 var sizecounter;
-
-console.log(window)
 
 let img;
 let imgWidth = 50;
 let imgHeight = 73;
 
+let WIDTH = 750;
+let HEIGHT = 500
+
+let selection = false;
+let itemSelected = ""
+
 function preload(){
     img = loadImage('toto.png');
-    console.log(img)
 }
 
 function setup() {
-  ////////////
-  slider = createSlider(1,8, 5);
-  slider.parent('slider');
-  sizecounter = select(".sizecounter");
-  sizecounter.html(slider.value());
-  var canvas = createCanvas(750,500);
-  canvas.class('canvas');
-  canvas.parent('canvas-holder');
-  background(51);
-  ////////////
+    tree1 = createButton();
+    tree1.class("myTree")
+    tree1.parent("tree1")
+    tree1.attribute("value","tree")
+    tree1.mouseClicked(function(){
+        selection = true;
+        console.log(itemSelected)
+        itemSelected = "tree1"
+        console.log(itemSelected)
+    })
+    ////////////
+    slider = createSlider(1,8, 5);
+    slider.parent('slider');
+    sizecounter = select(".sizecounter");
+    sizecounter.html(slider.value());
+    var canvas = createCanvas(WIDTH,HEIGHT);
+    canvas.class('canvas');
+    canvas.parent('canvas-holder');
+    background(51);
+    ////////////
 
-  r = random(155,255)
-  g = random(155,255)
-  b = random(155,255)
-
-//   socket = io.connect('http://localhost:3000');
+    //   socket = io.connect('http://localhost:3000');
 }
-
-// function mouseDragged() {
-//   sizecounter.html(slider.value());
-//   strokeWeight(slider.value())
-//   stroke(r,g,b);
-//   line(pmouseX,pmouseY, mouseX,mouseY);
-// }
 
 function mouseClicked(){
     image(img, mouseX - imgWidth/2, mouseY - imgHeight/2);
-    // sizecounter.html(slider.value());
-    // strokeWeight(slider.value())
-    // stroke(r,g,b);
-    // ellipse(mouseX,mouseY,5)
 }
 
-function draw() {
-}
+
+
+
+
+
+//-------- DVD Screenscaver ---------//
+
+// let imageX = 40;
+// let imageY = 0;
+
+// let incrementorX = 2.5;
+// let incrementorY = 2.5;
+
+// function checkBoundsX(currPos){
+//     if (currPos > WIDTH - 40 || currPos < -40){
+//         return true;
+//     }
+//     return false;
+// }
+
+// function checkBoundsY(currPos){
+//     if (currPos > HEIGHT - 40 || currPos < -40){
+//         return true;
+//     }
+//     return false;
+// }
+
+// function draw() {
+//     background(51);
+//     if (checkBoundsX(imageX)){
+//         incrementorX *= -1;
+//     }
+//     if (checkBoundsY(imageY)){
+//         incrementorY *= -1;
+//     }
+//     imageX += incrementorX;
+//     imageY += incrementorY;
+//     image(img, imageX, imageY);
+// }
