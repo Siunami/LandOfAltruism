@@ -23,9 +23,7 @@ function setup() {
     tree1.attribute("value","tree")
     tree1.mouseClicked(function(){
         selection = true;
-        console.log(itemSelected)
         itemSelected = "tree1"
-        console.log(itemSelected)
     })
     ////////////
     slider = createSlider(1,8, 5);
