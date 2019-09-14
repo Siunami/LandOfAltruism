@@ -2,28 +2,53 @@ var socket;
 var slider;
 var sizecounter;
 
-let img;
-let imgWidth = 50;
-let imgHeight = 73;
+let imageTree1;
+let imageTree1Width = 50;
+let imageTree1Height = 67;
 
 let WIDTH = 750;
 let HEIGHT = 500
 
-let selection = false;
-let itemSelected = ""
+const selectedState = {
+    'NONE_SELECTED': 'none_selected',
+    'SELECTED': 'selected'
+}
+
+const placedState = {
+    "NONE_PLACED":"none_placed",
+    "TEMP_PLACED":"temp_placed"
+}
+
+const treeType = {
+    'TREE1': 'tree1',
+    'TREE2': 'tree2'
+}
+
+let currentState;
+let currentTree;
 
 function preload(){
-    img = loadImage('toto.png');
+    imageTree1 = loadImage('test_tree.png');
 }
 
 function setup() {
-    tree1 = createButton();
+    currentState = selectedState.NONE_SELECTED;
+
+    tree1 = createButton("Tree1");
     tree1.class("myTree")
     tree1.parent("tree1")
-    tree1.attribute("value","tree")
-    tree1.mouseClicked(function(){
-        selection = true;
-        itemSelected = "tree1"
+    tree1.attribute("value","tree1")
+    tree1.mouseClicked(function(){ 
+        currentState = selectedState.SELECTED;
+        currentTree = treeType.TREE1;
+    })
+    tree2 = createButton("Tree2");
+    tree2.class("myTree")
+    tree2.parent("tree1")
+    tree2.attribute("value","tree2")
+    tree2.mouseClicked(function(){ 
+        currentState = selectedState.SELECTED;
+        currentTree = treeType.TREE2;
     })
     ////////////
     slider = createSlider(1,8, 5);
@@ -40,7 +65,15 @@ function setup() {
 }
 
 function mouseClicked(){
-    image(img, mouseX - imgWidth/2, mouseY - imgHeight/2);
+    if (currentState == selectedState.SELECTED){
+        // TODO: Bounding box avoid too much tree overlap algorithm
+        image(imageTree1, mouseX - imageTree1Width/2, mouseY - imageTree1Height/2)
+
+    }
+    // for (let i = 0; i < 100; i++){
+
+    //     image(img, Math.floor(Math.random() * WIDTH), Math.floor(Math.random() * HEIGHT));
+    // }
 }
 
 
