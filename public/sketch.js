@@ -5,6 +5,17 @@ var b;
 var slider;
 var sizecounter;
 
+console.log(window)
+
+let img;
+let imgWidth = 50;
+let imgHeight = 73;
+
+function preload(){
+    img = loadImage('toto.png');
+    console.log(img)
+}
+
 function setup() {
   ////////////
   slider = createSlider(1,8, 5);
@@ -21,14 +32,22 @@ function setup() {
   g = random(155,255)
   b = random(155,255)
 
-  socket = io.connect('http://b9241f17.ngrok.io');
+//   socket = io.connect('http://localhost:3000');
 }
 
-function mouseDragged() {
-  sizecounter.html(slider.value());
-  strokeWeight(slider.value())
-  stroke(r,g,b);
-  line(pmouseX,pmouseY, mouseX,mouseY);
+// function mouseDragged() {
+//   sizecounter.html(slider.value());
+//   strokeWeight(slider.value())
+//   stroke(r,g,b);
+//   line(pmouseX,pmouseY, mouseX,mouseY);
+// }
+
+function mouseClicked(){
+    image(img, mouseX - imgWidth/2, mouseY - imgHeight/2);
+    // sizecounter.html(slider.value());
+    // strokeWeight(slider.value())
+    // stroke(r,g,b);
+    // ellipse(mouseX,mouseY,5)
 }
 
 function draw() {
