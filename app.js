@@ -8,11 +8,6 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());       // to support JSON-encoded bodies
 app.use(express.urlencoded());
 
-// app.use(bodyParser.json());       // to support JSON-encoded bodies
-// app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-//   extended: true
-// })); 
-
 let server = app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
 
 const path = require('path');
@@ -35,7 +30,8 @@ let allTrees = [{
 
 app.post('/addTrees', function(req,res){
     // Save data
-    console.log(req.body)
+    console.log(req.body);
+    allTrees = allTrees.concat(req.body);
     res.send('Got POST request')
 })
 
