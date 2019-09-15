@@ -22,11 +22,7 @@ app.get('/',function(req,res) {
     res.sendFile(path.join(__dirname+'/public/index.html'));
 });
 
-let allTrees = [{
-    "x":60,
-    "y":50,
-    "treetype":"tree1"
-}];
+let allTrees = [];
 
 app.post('/addTrees', function(req,res){
     // Save data

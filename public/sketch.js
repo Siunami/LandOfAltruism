@@ -79,6 +79,7 @@ function renderInitialTrees(data){
     for (var i = 0 ; i < permanentTreeSprite.length ; i++){
         permanentTreeSprite[i].remove();
     }
+    console.log(permanentTreeSprite)
     for (let i in data){
         if (data[i]["treetype"] == treeType.TREE1){
             let tree = createSprite(data[i]["x"],data[i]["y"],imageTree1Width,imageTree1Height)
@@ -127,6 +128,7 @@ function renderInitialTrees(data){
 
         }
     }
+    console.log(permanentTreeSprite)
 }
 
 function fetchServerData(){
@@ -162,14 +164,6 @@ function setup() {
     // PROBLEM: Two people trying to create a tree on the same spot.
 
     /////// GET INITIAL DATA //////
-    // fetch('/getTrees')
-    // .then(function(response){
-    //     return response.json();
-    // })
-    // .then(function(data){
-    //     console.log(data)
-    //     renderInitialTrees(data)
-    // })
     fetchServerData()
 
     /////// DONATE BUTTON //////
