@@ -35,6 +35,9 @@ let currentTree;
 let tempTreeSprite;
 let permanentTreeSprite;
 
+let nameInput;
+let urlInput;
+let commentInput;
 
 function preload(){
     imageTree1 = loadImage('test_tree.png');
@@ -66,7 +69,14 @@ function sendTrees(){
         sendTreeList.push({
             "x":tempTreeSprite[i].position.x, 
             "y":tempTreeSprite[i].position.y,
-            "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0]
+            "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0],
+            "meta": {
+                "name":nameInput.value(),
+                "date": new Date(),
+                "url":urlInput.value(),
+                "comment":commentInput.value(),
+                "payment_data":50
+            }
         })
     }
     for (var i = 0 ; i < tempTreeSprite.length ; i++){
@@ -222,7 +232,20 @@ function setup() {
         createMouseSprite()
         mouseSprite.changeImage('tree2')
     })
-    ////////////
+    //////////// USER INPUT ////////
+    nameInput = createInput("");
+    nameInput.class("name")
+    nameInput.parent("nameInput")
+    nameInput.attribute("value","CaptainSparkles")
+
+    urlInput = createInput("");
+    urlInput.class("name")
+    urlInput.parent("urlInput")
+
+    commentInput = createInput("");
+    commentInput.class("name")
+    commentInput.parent("commentInput")
+
 
     var canvas = createCanvas(windowWidth,(windowHeight)-controlsHEIGHT);
     canvas.class('canvas');
