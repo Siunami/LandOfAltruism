@@ -52,7 +52,7 @@ function createMouseSprite(){
     mouseSprite = createSprite(mouseX,mouseY)
     mouseSprite.addImage('tree1',imageTree1);
     mouseSprite.addImage('tree2',imageTree2);
-    mouseSprite.setCollider('rectangle',0,0,10,10);
+    mouseSprite.setCollider('rectangle',0,0,25,25);
     // mouseSprite.setCollider('circle',0,0,10);
     mouseSprite.debug = true;
 }
@@ -69,7 +69,7 @@ function setup() {
     // for (var i = 0; i < 100; i++){
     //     let tree = createSprite(Math.floor(Math.random() * WIDTH) + 1, Math.floor(Math.random() * HEIGHT) + 1,imageTree1Width,imageTree1Height)
     //     tree.addImage(imageTree1);
-    //     tree.setCollider('rectangle',0,0,10,10);
+    //     tree.setCollider('rectangle',0,0,25,25);
     //     // tree.setCollider('circle',0,0,10);
     //     tree.debug = true;
     //     tempTreeSprite.add(tree);
@@ -126,25 +126,55 @@ function mouseHandle(){
 
         // TODO: Bounding box avoid too much tree overlap algorithm
         if (currentTree == treeType.TREE1){
-            let tree = createSprite(mouseX,mouseY,imageTree1Width,imageTree1Height)
+            let tree = createSprite(mouseSprite.position.x,mouseSprite.position.y,imageTree1Width,imageTree1Height)
             tree.addAnimation('tree1_temp', imageTree1);
             tree.addAnimation('tree1_temp_delete', imageTree1_delete);
 
-            tree.setCollider('rectangle',0,0,10,10);
+            tree.setCollider('rectangle',0,0,25,25);
             // tree.setCollider('circle',0,0,10);
             tree.debug = true;
+
+            tree.onMouseOver = function(){
+                tree.changeAnimation('tree1_temp_delete');
+            }
+
+            tree.onMouseOut = function(){
+                tree.changeAnimation('tree1_temp');
+            }
+
+            tree.onMousePressed = function(){
+                if (currentSelectState == selectedState.NONE_SELECTED){
+                    tree.remove()
+                    console.log(tempTreeSprite);
+                }
+            }
 
             tree.changeAnimation('tree1_temp');
             tempTreeSprite.add(tree);
 
         } else if (currentTree == treeType.TREE2) {
-            let tree = createSprite(mouseX,mouseY,imageTree2Width,imageTree2Height)
+            let tree = createSprite(mouseSprite.position.x,mouseSprite.position.y,imageTree2Width,imageTree2Height)
             tree.addAnimation('tree2_temp', imageTree2);
             tree.addAnimation('tree2_temp_delete', imageTree2_delete);
 
-            tree.setCollider('rectangle',0,0,10,10);
+            tree.setCollider('rectangle',0,0,25,25);
             // tree.setCollider('circle',0,0,10);
             tree.debug = true;
+
+            tree.onMouseOver = function(){
+                tree.changeAnimation('tree2_temp_delete');
+            }
+
+            tree.onMouseOut = function(){
+                tree.changeAnimation('tree2_temp');
+            }
+
+            tree.onMousePressed = function(){
+                if (currentSelectState == selectedState.NONE_SELECTED){
+                    tree.remove()
+                    console.log(tempTreeSprite);
+                }
+            }
 
             tree.changeAnimation('tree2_temp');
             tempTreeSprite.add(tree);
@@ -175,7 +205,6 @@ function mouseHandle(){
 
 function draw(){
     background(51);
-    console.log(frameRate())
     // mouseSprite.x = mouseX;
     // mouseSprite.y = mouseY;
     if (currentSelectState == selectedState.SELECTED){
