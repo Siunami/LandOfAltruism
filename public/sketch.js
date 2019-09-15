@@ -10,8 +10,9 @@ let imageTree2;
 let imageTree2Width = 50;
 let imageTree2Height = 72;
 
-let WIDTH = 750;
-let HEIGHT = 500
+// let WIDTH = 750;
+// let HEIGHT = 500;
+let = controlsHEIGHT = 120;
 
 const selectedState = {
     'NONE_SELECTED': 'none_selected',
@@ -79,7 +80,7 @@ function setup() {
     tree1.class("myTree")
     tree1.parent("tree1")
     tree1.attribute("value","tree1")
-    tree1.mouseClicked(function(){ 
+    tree1.mouseClicked(function(){
         currentSelectState = selectedState.SELECTED;
         currentTree = treeType.TREE1;
         createMouseSprite()
@@ -89,18 +90,24 @@ function setup() {
     tree2.class("myTree")
     tree2.parent("tree2")
     tree2.attribute("value","tree2")
-    tree2.mouseClicked(function(){ 
+    tree2.mouseClicked(function(){
+        currentSelectState = selectedState.SELECTED;
+        currentTree = treeType.TREE2;
+    })
+
+    tree3 = createButton("Tree3");
+    tree3.class("myTree")
+    tree3.parent("tree3")
+    tree3.attribute("value","tree3")
+    tree3.mouseClicked(function(){
         currentSelectState = selectedState.SELECTED;
         currentTree = treeType.TREE2;
         createMouseSprite()
         mouseSprite.changeImage('tree2')
     })
     ////////////
-    slider = createSlider(1,8, 5);
-    slider.parent('slider');
-    sizecounter = select(".sizecounter");
-    sizecounter.html(slider.value());
-    var canvas = createCanvas(WIDTH,HEIGHT);
+
+    var canvas = createCanvas(windowWidth,(windowHeight)-controlsHEIGHT);
     canvas.class('canvas');
     canvas.parent('canvas-holder');
     canvas.mouseClicked(mouseHandle)
@@ -115,7 +122,7 @@ function mouseHandle(){
     // 
     if (currentSelectState == selectedState.SELECTED){
         console.log([currentSelectState,currentTree])
-        
+
         // TODO: Bounding box avoid too much tree overlap algorithm
         if (currentTree == treeType.TREE1){
             let tree = createSprite(mouseX,mouseY,imageTree1Width,imageTree1Height)
