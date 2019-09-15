@@ -76,6 +76,9 @@ function sendTrees(){
 }
 
 function renderInitialTrees(data){
+    for (var i = 0 ; i < permanentTreeSprite.length ; i++){
+        permanentTreeSprite[i].remove();
+    }
     for (let i in data){
         if (data[i]["treetype"] == treeType.TREE1){
             let tree = createSprite(data[i]["x"],data[i]["y"],imageTree1Width,imageTree1Height)
@@ -300,19 +303,10 @@ function mouseHandle(){
 
         console.log(tempTreeSprite);
 
-
         currentSelectState = selectedState.NONE_SELECTED;
         currentPlacedState = placedState.TEMP_PLACED;
         currentTree = treeType.NONE;
-
     }
-
-    // //To delete the sprites
-    // if (currentSelectState == selectedState.NONE_SELECTED){
-        
-    // }
-
-
 }
 
 
