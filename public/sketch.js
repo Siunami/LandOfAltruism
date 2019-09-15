@@ -46,6 +46,7 @@ function preload(){
 
 let mouseSprite;
 
+// Helper function for setup
 function createMouseSprite(){
     mouseSprite = createSprite(mouseX,mouseY)
     mouseSprite.addImage('tree1',imageTree1);
@@ -54,6 +55,20 @@ function createMouseSprite(){
     // mouseSprite.setCollider('circle',0,0,10);
     mouseSprite.debug = true;
 }
+
+
+// Helper function for setup
+function sendTrees(){
+    sendTreeList = [];
+    for (var i = 0 ; i < tempTreeSprite.length ; i++){
+        sendTreeList.push({
+            "x":tempTreeSprite[i].position.x, 
+            "y":tempTreeSprite[i].position.y,
+            "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0]
+        })
+    }
+}
+
 
 function setup() {
     currentSelectState = selectedState.NONE_SELECTED;
@@ -73,6 +88,16 @@ function setup() {
     //     tempTreeSprite.add(tree);
     // }
 
+    // PROBLEM: Two people trying to create a tree on the same spot.
+
+    /////// GET INITIAL DATA //////
+    fetch('getTrees')
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data)
+    })
 
     /////// DONATE BUTTON //////
     let donate = createButton("donate");
@@ -81,6 +106,19 @@ function setup() {
     donate.attribute("value","donate")
     donate.mouseClicked(function(){
         console.log("ASDFASDF")
+        fetch("/addTrees", {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify({
+                "x":60,
+                "y":34
+            }), // data can be `string` or {object}!
+            headers:{
+              'Content-Type': 'application/json'
+            }
+        })
+        // .then(res => res.json())
+        .then(response => console.log('Success:', JSON.stringify(response)))
+        .catch(error => console.error('Error:', error));
     })
 
     /////// TREE BUTTONS //////
@@ -126,23 +164,6 @@ function setup() {
     //   socket = io.connect('http://localhost:3000');
 }
 
-<<<<<<< Updated upstream
-=======
-function sendTrees(){
-    
-    for (var i = 0 ; i < tempTreeSprite.length ; i++){
-        sendTreeList.push({
-            "x":tempTreeSprite[i].position.x, 
-            "y":tempTreeSprite[i].position.y,
-            "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0]
-        })
-        console.log(sendTreeList);
-    }
-
-}
-
-
->>>>>>> Stashed changes
 function mouseHandle(){
     if (currentSelectState == selectedState.SELECTED){
         console.log([currentSelectState,currentTree])
@@ -174,7 +195,6 @@ function mouseHandle(){
 
             tree.changeAnimation('tree1_temp');
             tempTreeSprite.add(tree);
-            sendTrees();
 
         } else if (currentTree == treeType.TREE2) {
             let tree = createSprite(mouseSprite.position.x,mouseSprite.position.y,imageTree2Width,imageTree2Height)
@@ -202,7 +222,6 @@ function mouseHandle(){
 
             tree.changeAnimation('tree2_temp');
             tempTreeSprite.add(tree);
-            sendTrees();
 
         }
 

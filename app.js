@@ -27,7 +27,18 @@ app.get('/',function(req,res) {
     res.sendFile(path.join(__dirname+'/public/index.html'));
 });
 
+let allTrees = [{
+    "x":60,
+    "y":50,
+    "treetype":"tree1"
+}];
+
 app.post('/addTrees', function(req,res){
+    // Save data
     console.log(req.body)
     res.send('Got POST request')
+})
+
+app.get('/getTrees', function(req, res){
+    res.send(allTrees)
 })
