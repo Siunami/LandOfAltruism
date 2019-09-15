@@ -164,6 +164,24 @@ function setup() {
     //   socket = io.connect('http://localhost:3000');
 }
 
+<<<<<<< Updated upstream
+=======
+
+function sendTrees(){
+    //Convert current tree position into JSON files to send to the server
+    for (var i = 0 ; i < tempTreeSprite.length ; i++){
+        sendTreeList.push({
+            "x":tempTreeSprite[i].position.x, 
+            "y":tempTreeSprite[i].position.y,
+            "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0]
+        })
+        console.log(sendTreeList);
+    }
+
+}
+
+
+>>>>>>> Stashed changes
 function mouseHandle(){
     if (currentSelectState == selectedState.SELECTED){
         console.log([currentSelectState,currentTree])
