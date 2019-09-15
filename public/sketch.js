@@ -34,7 +34,7 @@ let currentPlacedState;
 let currentTree;
 
 let tempTreeList = [];
-let tempTreeSprite = [];
+let tempTreeSprite;
 
 
 function preload(){
@@ -42,10 +42,34 @@ function preload(){
     imageTree2 = loadImage('test_tree2.png');
 }
 
+let mouseSprite;
+
+function createMouseSprite(){
+    mouseSprite = createSprite(mouseX,mouseY)
+    mouseSprite.addImage('tree1',imageTree1);
+    mouseSprite.addImage('tree2',imageTree2);
+    mouseSprite.setCollider('rectangle',0,0,10,10);
+    // mouseSprite.setCollider('circle',0,0,10);
+    mouseSprite.debug = true;
+}
+
 function setup() {
     currentSelectState = selectedState.NONE_SELECTED;
     currentPlacedState = placedState.NONE_PLACED;
     currentTree = treeType.NONE;
+    tempTreeSprite = new Group();
+    mouseSprite = createSprite(-50,-50);
+
+    // Generate 100 trees
+
+    // for (var i = 0; i < 100; i++){
+    //     let tree = createSprite(Math.floor(Math.random() * WIDTH) + 1, Math.floor(Math.random() * HEIGHT) + 1,imageTree1Width,imageTree1Height)
+    //     tree.addImage(imageTree1);
+    //     tree.setCollider('rectangle',0,0,10,10);
+    //     // tree.setCollider('circle',0,0,10);
+    //     tree.debug = true;
+    //     tempTreeSprite.add(tree);
+    // }
 
     tree1 = createButton("Tree1");
     tree1.class("myTree")
@@ -54,6 +78,8 @@ function setup() {
     tree1.mouseClicked(function(){ 
         currentSelectState = selectedState.SELECTED;
         currentTree = treeType.TREE1;
+        createMouseSprite()
+        mouseSprite.changeImage('tree1')
     })
     tree2 = createButton("Tree2");
     tree2.class("myTree")
@@ -62,6 +88,8 @@ function setup() {
     tree2.mouseClicked(function(){ 
         currentSelectState = selectedState.SELECTED;
         currentTree = treeType.TREE2;
+        createMouseSprite()
+        mouseSprite.changeImage('tree2')
     })
     ////////////
     slider = createSlider(1,8, 5);
@@ -80,6 +108,7 @@ function setup() {
 
 
 function mouseHandle(){
+    // 
     if (currentSelectState == selectedState.SELECTED){
         console.log([currentSelectState,currentTree])
         
@@ -87,16 +116,18 @@ function mouseHandle(){
         if (currentTree == treeType.TREE1){
             let tree = createSprite(mouseX,mouseY,imageTree1Width,imageTree1Height)
             tree.addImage(imageTree1);
-            tree.setCollider('rectangle',0,0,30,30);
+            tree.setCollider('rectangle',0,0,10,10);
+            // tree.setCollider('circle',0,0,10);
             tree.debug = true;
-            tempTreeSprite.push(tree);
+            tempTreeSprite.add(tree);
 
         } else if (currentTree == treeType.TREE2) {
             let tree = createSprite(mouseX,mouseY,imageTree2Width,imageTree2Height)
             tree.addImage(imageTree2);
-            tree.setCollider('rectangle',0,0,30,30);
+            tree.setCollider('rectangle',0,0,10,10);
+            // tree.setCollider('circle',0,0,10);
             tree.debug = true;
-            tempTreeSprite.push(tree);
+            tempTreeSprite.add(tree);
         }
 
         console.log(tempTreeSprite);
@@ -123,6 +154,17 @@ function mouseHandle(){
 
 
 function draw(){
+    background(51);
+    console.log(frameRate())
+    // mouseSprite.x = mouseX;
+    // mouseSprite.y = mouseY;
+    if (currentSelectState == selectedState.SELECTED){
+        mouseSprite.velocity.x = (mouseX-mouseSprite.position.x)/10;
+        mouseSprite.velocity.y = (mouseY-mouseSprite.position.y)/10;
+        mouseSprite.collide(tempTreeSprite)
+    } else {
+        mouseSprite.remove();
+    }
     drawSprites();
 }
 
