@@ -1,53 +1,37 @@
-/* Handle any errors returns from Checkout  */
-var handleResult = function(result) {
-  if (result.error) {
-    var displayError = document.getElementById("error-message");
-    displayError.textContent = result.error.message;
-  }
-};
+var PUBLIC_KEY = "pk_test_aXZVed6JzeuDVydHdLevnu1K0015vcVZca";
 
-// Create a Checkout Session with the selected quantity
-var createCheckoutSession = function(stripe) {
-  var inputEl = document.getElementById("quantity-input");
-  var quantity = parseInt(inputEl.value);
+var SKU_ID = "sku_FoTjBWEVlHGL2x";
 
-  return fetch("/create-checkout-session", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      quantity: quantity
-    })
-  }).then(function(result) {
-    return result.json();
-  });
-};
+var stripe = Stripe(PUBLIC_KEY);
 
-// Handle any errors returned from Checkout
-var handleResult = function(result) {
-  if (result.error) {
-    var displayError = document.getElementById("error-message");
-    displayError.textContent = result.error.message;
-  }
-};
+function handleResult(){
 
-/* Get your Stripe public key to initialize Stripe.js */
-fetch("/public-key")
-  .then(function(result) {
-    return result.json();
-  })
-  .then(function(json) {
-    var publicKey = json.publicKey;
-    var stripe = Stripe(publicKey);
-    // Setup event handler to create a Checkout Session on submit
-    document.querySelector("#submit").addEventListener("click", function(evt) {
-      createCheckoutSession().then(function(data) {
+}
+
+setTimeout(function(){
+    var donateButton = document.getElementsByClassName("donate")[0];
+
+    var handleResult = function(result) {
+        if (result.error) {
+            console.log(result.error.message);
+        //   var displayError = document.getElementById("error-message");
+        //   displayError.textContent = result.error.message;
+        }
+      };
+
+    donateButton.addEventListener("click", function() {
+        var quantity = 10
+        // Make the call to Stripe.js to redirect to the checkout page
+        // with the current quantity
         stripe
-          .redirectToCheckout({
-            sessionId: data.sessionId
-          })
-          .then(handleResult);
-      });
-    });
-  });
+            .redirectToCheckout({
+            items: [{ sku: SKU_ID, quantity: quantity }],
+            successUrl: "http://localhost:3000/success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: "http://localhost:3000/canceled.html"
+            })
+            .then(handleResult);
+        });
+}, 4000)
+
+
+

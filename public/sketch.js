@@ -164,7 +164,7 @@ function setup() {
 
     // for (var i = 0; i < 100; i++){
     //     let tree = createSprite(Math.floor(Math.random() * WIDTH) + 1, Math.floor(Math.random() * HEIGHT) + 1,imageTree1Width,imageTree1Height)
-    //     tree.addImage(imageTree1);
+    //     tree.addAnimation('tree1_temp', imageTree1);
     //     tree.setCollider('rectangle',0,0,25,25);
     //     // tree.setCollider('circle',0,0,10);
     //     tree.debug = true;
@@ -255,6 +255,10 @@ function setup() {
     ////////////
 
     //   socket = io.connect('http://localhost:3000');
+}
+
+function windowResized(){
+    resizeCanvas(windowWidth,(windowHeight)-controlsHEIGHT);
 }
 
 function mouseHandle(){
