@@ -44,7 +44,6 @@ function preload(){
 
     imageTree2 = loadImage('test_tree2.png');
     imageTree2_delete = loadImage('test_tree2_del.png');
-
 }
 
 let mouseSprite;
@@ -93,6 +92,8 @@ function setup() {
     tree2.mouseClicked(function(){
         currentSelectState = selectedState.SELECTED;
         currentTree = treeType.TREE2;
+        createMouseSprite()
+        mouseSprite.changeImage('tree2')
     })
 
     tree3 = createButton("Tree3");
@@ -126,18 +127,26 @@ function mouseHandle(){
         // TODO: Bounding box avoid too much tree overlap algorithm
         if (currentTree == treeType.TREE1){
             let tree = createSprite(mouseX,mouseY,imageTree1Width,imageTree1Height)
-            tree.addImage(imageTree1);
+            tree.addAnimation('tree1_temp', imageTree1);
+            tree.addAnimation('tree1_temp_delete', imageTree1_delete);
+
             tree.setCollider('rectangle',0,0,10,10);
             // tree.setCollider('circle',0,0,10);
             tree.debug = true;
+
+            tree.changeAnimation('tree1_temp');
             tempTreeSprite.add(tree);
 
         } else if (currentTree == treeType.TREE2) {
             let tree = createSprite(mouseX,mouseY,imageTree2Width,imageTree2Height)
-            tree.addImage(imageTree2);
+            tree.addAnimation('tree2_temp', imageTree2);
+            tree.addAnimation('tree2_temp_delete', imageTree2_delete);
+
             tree.setCollider('rectangle',0,0,10,10);
             // tree.setCollider('circle',0,0,10);
             tree.debug = true;
+
+            tree.changeAnimation('tree2_temp');
             tempTreeSprite.add(tree);
         }
 
