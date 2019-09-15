@@ -32,7 +32,7 @@ let currentSelectState;
 let currentPlacedState;
 let currentTree;
 
-let tempTreeList = [];
+let sendTreeList = [];
 let tempTreeSprite;
 
 
@@ -126,6 +126,23 @@ function setup() {
     //   socket = io.connect('http://localhost:3000');
 }
 
+<<<<<<< Updated upstream
+=======
+function sendTrees(){
+    
+    for (var i = 0 ; i < tempTreeSprite.length ; i++){
+        sendTreeList.push({
+            "x":tempTreeSprite[i].position.x, 
+            "y":tempTreeSprite[i].position.y,
+            "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0]
+        })
+        console.log(sendTreeList);
+    }
+
+}
+
+
+>>>>>>> Stashed changes
 function mouseHandle(){
     if (currentSelectState == selectedState.SELECTED){
         console.log([currentSelectState,currentTree])
@@ -157,6 +174,7 @@ function mouseHandle(){
 
             tree.changeAnimation('tree1_temp');
             tempTreeSprite.add(tree);
+            sendTrees();
 
         } else if (currentTree == treeType.TREE2) {
             let tree = createSprite(mouseSprite.position.x,mouseSprite.position.y,imageTree2Width,imageTree2Height)
@@ -184,15 +202,12 @@ function mouseHandle(){
 
             tree.changeAnimation('tree2_temp');
             tempTreeSprite.add(tree);
+            sendTrees();
+
         }
 
         console.log(tempTreeSprite);
 
-        tempTreeList.push({
-            "x": mouseX,
-            "y": mouseY,
-            "treetype": currentTree
-        })
 
         currentSelectState = selectedState.NONE_SELECTED;
         currentPlacedState = placedState.TEMP_PLACED;
