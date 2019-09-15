@@ -69,7 +69,9 @@ function sendTrees(){
             "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0]
         })
     }
-    tempTreeSprite = new Group();
+    for (var i = 0 ; i < tempTreeSprite.length ; i++){
+        tempTreeSprite[i].remove();
+    }
     return sendTreeList;
 }
 
@@ -124,6 +126,16 @@ function renderInitialTrees(data){
     }
 }
 
+function fetchServerData(){
+    fetch('/getTrees')
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data)
+        renderInitialTrees(data)
+    })
+}
 
 function setup() {
     currentSelectState = selectedState.NONE_SELECTED;
@@ -147,14 +159,15 @@ function setup() {
     // PROBLEM: Two people trying to create a tree on the same spot.
 
     /////// GET INITIAL DATA //////
-    fetch('/getTrees')
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data){
-        console.log(data)
-        renderInitialTrees(data)
-    })
+    // fetch('/getTrees')
+    // .then(function(response){
+    //     return response.json();
+    // })
+    // .then(function(data){
+    //     console.log(data)
+    //     renderInitialTrees(data)
+    // })
+    fetchServerData()
 
     /////// DONATE BUTTON //////
     let donate = createButton("donate");
@@ -174,7 +187,10 @@ function setup() {
             }
         })
         // .then(res => res.json())
-        .then(response => console.log('Success:', JSON.stringify(response)))
+        .then((response) => {
+            console.log('Success:', JSON.stringify(response))
+            fetchServerData()
+        })
         .catch(error => console.error('Error:', error));
     })
 
