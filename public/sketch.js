@@ -10,8 +10,6 @@ let imageTree2;
 let imageTree2Width = 50;
 let imageTree2Height = 72;
 
-// let WIDTH = 750;
-// let HEIGHT = 500;
 let = controlsHEIGHT = 120;
 
 const selectedState = {
@@ -75,7 +73,18 @@ function setup() {
     //     tempTreeSprite.add(tree);
     // }
 
-    tree1 = createButton("Tree1");
+
+    /////// DONATE BUTTON //////
+    let donate = createButton("donate");
+    donate.class("donate")
+    donate.parent("donateContainer")
+    donate.attribute("value","donate")
+    donate.mouseClicked(function(){
+        console.log("ASDFASDF")
+    })
+
+    /////// TREE BUTTONS //////
+    let tree1 = createButton("Tree1");
     tree1.class("myTree")
     tree1.parent("tree1")
     tree1.attribute("value","tree1")
@@ -85,7 +94,7 @@ function setup() {
         createMouseSprite()
         mouseSprite.changeImage('tree1')
     })
-    tree2 = createButton("Tree2");
+    let tree2 = createButton("Tree2");
     tree2.class("myTree")
     tree2.parent("tree2")
     tree2.attribute("value","tree2")
@@ -95,8 +104,7 @@ function setup() {
         createMouseSprite()
         mouseSprite.changeImage('tree2')
     })
-
-    tree3 = createButton("Tree3");
+    let tree3 = createButton("Tree3");
     tree3.class("myTree")
     tree3.parent("tree3")
     tree3.attribute("value","tree3")
@@ -118,9 +126,7 @@ function setup() {
     //   socket = io.connect('http://localhost:3000');
 }
 
-
 function mouseHandle(){
-    // 
     if (currentSelectState == selectedState.SELECTED){
         console.log([currentSelectState,currentTree])
 
@@ -194,10 +200,10 @@ function mouseHandle(){
 
     }
 
-    //To delete the sprites
-    if (currentSelectState == selectedState.NONE_SELECTED){
+    // //To delete the sprites
+    // if (currentSelectState == selectedState.NONE_SELECTED){
         
-    }
+    // }
 
 
 }
