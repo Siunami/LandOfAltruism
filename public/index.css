@@ -11,13 +11,29 @@ body {
 }
 
 #canvas-holder {
-	margin: 20px auto;
+	/* margin: 20px auto; */
 }
 
 canvas {
 	border-radius: 8px;
+	width:100vw;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-basis: 100%;
+}
+
+
+#controls{
+max-width: 80vw:
+
+}
 #slider {
 	position: relative;
 	top: 2px;
@@ -39,4 +55,12 @@ canvas {
 
 #download:hover {
 	background-color: #d2d2d0;
+}
+
+
+
+@media screen and (min-width: 800px) {
+  .column {
+    flex: 1;
+  }
 }
