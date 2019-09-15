@@ -12,6 +12,11 @@
   <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
   <script src="sketch.js" type="text/javascript"></script>
 
+  <!-- Stripe Files -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="./js/stripe.js" type="text/javascript"></script>
+
+
  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="index.css">
 </head>
@@ -42,6 +47,11 @@
         <h2>3. Section</h2>
         <hr/>
         <span id="donateContainer"></span>
+        <button id="submit">
+          Buy for $<span id="total">5</span>.00
+        </button>
+        <div id="error-message"></div>
+
       </div>
       <!-- <span>Trees <span id="tree1"></span><span id="tree2"></span></span> -->
       <!-- <span>Pen size <span id="slider"></span>  <span class="sizecounter"></span></span> -->
