@@ -69,6 +69,7 @@ function sendTrees(){
             "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0]
         })
     }
+    tempTreeSprite = new Group();
     return sendTreeList;
 }
 
@@ -307,6 +308,7 @@ function draw(){
         mouseSprite.velocity.x = (mouseX-mouseSprite.position.x)/10;
         mouseSprite.velocity.y = (mouseY-mouseSprite.position.y)/10;
         mouseSprite.collide(tempTreeSprite)
+        mouseSprite.collide(permanentTreeSprite)
     } else {
         mouseSprite.remove();
     }
