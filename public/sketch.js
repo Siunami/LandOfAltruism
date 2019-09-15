@@ -39,7 +39,11 @@ let tempTreeSprite;
 
 function preload(){
     imageTree1 = loadImage('test_tree.png');
+    imageTree1_delete = loadImage('test_tree_del.png');
+
     imageTree2 = loadImage('test_tree2.png');
+    imageTree2_delete = loadImage('test_tree2_del.png');
+
 }
 
 let mouseSprite;
