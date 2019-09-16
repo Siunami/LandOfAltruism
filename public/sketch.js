@@ -143,10 +143,15 @@ function renderInitialTrees(data){
 
             tree.onMouseOver = function(){
                 tree.changeAnimation('tree2_hover');
+                isOnHover = true;
+                hovered_tree = data[i];
+                console.log(hovered_tree);
+                console.log(isOnHover);
             }
 
             tree.onMouseOut = function(){
                 tree.changeAnimation('tree2_permanent');
+                isOnHover = false;
             }
 
             tree.changeAnimation('tree2_permanent');
