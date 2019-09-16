@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 
+const fs = require('fs');
+
 // var bodyParser = require('body-parser')
 
 const PORT = process.env.PORT || 3000;
@@ -24,6 +26,14 @@ app.get('/',function(req,res) {
     res.sendFile(path.join(__dirname+'/public/index.html'));
 });
 
+const getSavedData = () => {
+    let rawData = fs.readFileSync('treeData.json');
+    let jsonData = JSON.parse(rawData);
+    // console.log(typeof jsonData)
+    // console.log(jsonData)
+    return jsonData
+}
+
 let allTrees = [];
 
 app.post('/addTrees', function(req,res){
@@ -34,5 +44,6 @@ app.post('/addTrees', function(req,res){
 })
 
 app.get('/getTrees', function(req, res){
+    // res.send(getSavedData())
     res.send(allTrees)
 })

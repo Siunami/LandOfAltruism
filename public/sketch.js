@@ -133,7 +133,6 @@ function renderInitialTrees(data){
 
             tree.changeAnimation('tree2_temp');
             permanentTreeSprite.add(tree);
-
         }
     }
     console.log(permanentTreeSprite)
@@ -148,11 +147,9 @@ function fetchServerData(){
         console.log(data)
 
         renderInitialTrees(data)
-        // BUG!! Temp tree of tree2 stays behind the permanent tree after updating
         let length = tempTreeSprite.length;
-        for (var i = 0 ; i <= length ; i++){
-            console.log(tempTreeSprite);
-            tempTreeSprite[i].remove();
+        for (var i = 0 ; i < length ; i++){
+            tempTreeSprite[0].remove();
         }
     })
 }
