@@ -79,9 +79,7 @@ function sendTrees(){
             }
         })
     }
-    for (var i = 0 ; i < tempTreeSprite.length ; i++){
-        tempTreeSprite[i].remove();
-    }
+
     return sendTreeList;
 }
 
@@ -148,7 +146,14 @@ function fetchServerData(){
     })
     .then(function(data){
         console.log(data)
+
         renderInitialTrees(data)
+        // BUG!! Temp tree of tree2 stays behind the permanent tree after updating
+        let length = tempTreeSprite.length;
+        for (var i = 0 ; i <= length ; i++){
+            console.log(tempTreeSprite);
+            tempTreeSprite[i].remove();
+        }
     })
 }
 
@@ -209,6 +214,8 @@ function setup() {
     tree1.mouseClicked(function(){
         currentSelectState = selectedState.SELECTED;
         currentTree = treeType.TREE1;
+        //remove existing sprite before creating new sprite
+        mouseSprite.remove();
         createMouseSprite()
         mouseSprite.changeImage('tree1')
     })
@@ -219,6 +226,8 @@ function setup() {
     tree2.mouseClicked(function(){
         currentSelectState = selectedState.SELECTED;
         currentTree = treeType.TREE2;
+        mouseSprite.remove();
+        //remove existing sprite before creating new sprite
         createMouseSprite()
         mouseSprite.changeImage('tree2')
     })
