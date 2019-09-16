@@ -40,11 +40,15 @@ let urlInput;
 let commentInput;
 
 function preload(){
-    imageTree1 = loadImage('test_tree.png');
-    imageTree1_delete = loadImage('test_tree_del.png');
+    imageTree1 = loadImage('tree1.png');
+    imageTree1_hover = loadImage('tree1_hover.png');
+    imageTree1_temp = loadImage('tree1_temp.png');
+    imageTree1_delete = loadImage('tree1_temp_del.png');
 
-    imageTree2 = loadImage('test_tree2.png');
-    imageTree2_delete = loadImage('test_tree2_del.png');
+    imageTree2 = loadImage('tree2.png');
+    imageTree2_hover = loadImage('tree2_hover.png');
+    imageTree2_temp = loadImage('tree2_temp.png');
+    imageTree2_delete = loadImage('tree2_temp_del.png');
 }
 
 let mouseSprite;
@@ -52,8 +56,8 @@ let mouseSprite;
 // Helper function for setup
 function createMouseSprite(){
     mouseSprite = createSprite(mouseX,mouseY)
-    mouseSprite.addImage('tree1',imageTree1);
-    mouseSprite.addImage('tree2',imageTree2);
+    mouseSprite.addImage('tree1',imageTree1_temp);
+    mouseSprite.addImage('tree2',imageTree2_temp);
     mouseSprite.setCollider('rectangle',0,0,25,25);
     // mouseSprite.setCollider('circle',0,0,10);
     mouseSprite.debug = true;
@@ -84,58 +88,62 @@ function sendTrees(){
 }
 
 function renderInitialTrees(data){
-    for (var i = 0 ; i < permanentTreeSprite.length ; i++){
-        permanentTreeSprite[i].remove();
+    //Deletes current permanent tree sprite to refresh the screen
+    let length_perm = permanentTreeSprite.length;
+    for (var i = 0 ; i < length_perm ; i++){
+        permanentTreeSprite[0].remove();
     }
-    console.log(permanentTreeSprite)
+
+    console.log("Permanent tree sprite is ↓");
+    console.log(permanentTreeSprite);
     for (let i in data){
         if (data[i]["treetype"] == treeType.TREE1){
             let tree = createSprite(data[i]["x"],data[i]["y"],imageTree1Width,imageTree1Height)
             // TODO: New Animation for permanent tree here
-            tree.addAnimation('tree1_temp', imageTree1);
-            
+            tree.addAnimation('tree1_permanent', imageTree1);
+            tree.addAnimation('tree1_hover', imageTree1_hover);
+
 
             tree.setCollider('rectangle',0,0,25,25);
             // tree.setCollider('circle',0,0,10);
             tree.debug = true;
 
             tree.onMouseOver = function(){
-                // TODO: Hover tooltip
-                console.log("Hover tooltip")
-                // tree.changeAnimation('tree1_temp_delete');
+                // Change to hover state animation
+                tree.changeAnimation('tree1_hover');
             }
 
             tree.onMouseOut = function(){
-                // tree.changeAnimation('tree1_temp');
+                tree.changeAnimation('tree1_permanent');
             }
 
-            tree.changeAnimation('tree1_temp');
+            tree.changeAnimation('tree1_permanent');
             permanentTreeSprite.add(tree);
 
         } else if (data[i]["treetype"] == treeType.TREE2) {
             let tree = createSprite(data[i]["x"],data[i]["y"],imageTree2Width,imageTree2Height)
             // TODO: New Animation for permanent tree here
-            tree.addAnimation('tree2_temp', imageTree2);
+            tree.addAnimation('tree2_permanent', imageTree2);
+            tree.addAnimation('tree2_hover', imageTree2_hover);
+
 
             tree.setCollider('rectangle',0,0,25,25);
             // tree.setCollider('circle',0,0,10);
             tree.debug = true;
 
             tree.onMouseOver = function(){
-                // TODO: Hover tooltip
-                console.log("Hover tooltip")
-                // tree.changeAnimation('tree1_temp_delete');
+                tree.changeAnimation('tree2_hover');
             }
 
             tree.onMouseOut = function(){
-                // tree.changeAnimation('tree1_temp');
+                tree.changeAnimation('tree2_permanent');
             }
 
-            tree.changeAnimation('tree2_temp');
+            tree.changeAnimation('tree2_permanent');
             permanentTreeSprite.add(tree);
         }
     }
-    console.log(permanentTreeSprite)
+    //console.log(permanentTreeSprite)
 }
 
 function fetchServerData(){
@@ -144,8 +152,9 @@ function fetchServerData(){
         return response.json();
     })
     .then(function(data){
+        console.log("Tree data received from server↓")
         console.log(data)
-
+        //Delete the temporary tree sprites
         renderInitialTrees(data)
         let length = tempTreeSprite.length;
         for (var i = 0 ; i < length ; i++){
@@ -213,8 +222,8 @@ function setup() {
         currentTree = treeType.TREE1;
         //remove existing sprite before creating new sprite
         mouseSprite.remove();
-        createMouseSprite()
-        mouseSprite.changeImage('tree1')
+        createMouseSprite();
+        mouseSprite.changeImage('tree1');
     })
     let tree2 = createButton("Tree2");
     tree2.class("myTree")
@@ -223,10 +232,10 @@ function setup() {
     tree2.mouseClicked(function(){
         currentSelectState = selectedState.SELECTED;
         currentTree = treeType.TREE2;
-        mouseSprite.remove();
         //remove existing sprite before creating new sprite
-        createMouseSprite()
-        mouseSprite.changeImage('tree2')
+        mouseSprite.remove();
+        createMouseSprite();
+        mouseSprite.changeImage('tree2');
     })
     let tree3 = createButton("Tree3");
     tree3.class("myTree")
@@ -235,6 +244,8 @@ function setup() {
     tree3.mouseClicked(function(){
         currentSelectState = selectedState.SELECTED;
         currentTree = treeType.TREE2;
+        //remove existing sprite before creating new sprite
+        mouseSprite.remove();
         createMouseSprite()
         mouseSprite.changeImage('tree2')
     })
@@ -256,6 +267,7 @@ function setup() {
     var canvas = createCanvas(windowWidth,(windowHeight)-controlsHEIGHT);
     canvas.class('canvas');
     canvas.parent('canvas-holder');
+    //Activates the tree planting function
     canvas.mouseClicked(mouseHandle)
     background(51);
     ////////////
@@ -274,7 +286,7 @@ function mouseHandle(){
         // TODO: Bounding box avoid too much tree overlap algorithm
         if (currentTree == treeType.TREE1){
             let tree = createSprite(mouseSprite.position.x,mouseSprite.position.y,imageTree1Width,imageTree1Height)
-            tree.addAnimation('tree1_temp', imageTree1);
+            tree.addAnimation('tree1_temp', imageTree1_temp);
             tree.addAnimation('tree1_temp_delete', imageTree1_delete);
 
             tree.setCollider('rectangle',0,0,25,25);
@@ -301,7 +313,7 @@ function mouseHandle(){
 
         } else if (currentTree == treeType.TREE2) {
             let tree = createSprite(mouseSprite.position.x,mouseSprite.position.y,imageTree2Width,imageTree2Height)
-            tree.addAnimation('tree2_temp', imageTree2);
+            tree.addAnimation('tree2_temp', imageTree2_temp);
             tree.addAnimation('tree2_temp_delete', imageTree2_delete);
 
             tree.setCollider('rectangle',0,0,25,25);
