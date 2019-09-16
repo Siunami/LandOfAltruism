@@ -57,6 +57,18 @@ max-width: 80vw;
 	background-color: #d2d2d0;
 }
 
+.myTree1{
+	background-color: aqua;
+}
+
+.myTree2{
+	background-color: red;
+}
+
+.myTree3{
+	background-color: green;
+}
+
 
 
 @media screen and (min-width: 800px) {

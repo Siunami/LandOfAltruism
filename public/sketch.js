@@ -17,6 +17,7 @@ const selectedState = {
     'SELECTED': 'selected'
 }
 
+
 const placedState = {
     "NONE_PLACED":"none_placed",
     "TEMP_PLACED":"temp_placed"
@@ -233,7 +234,7 @@ function setup() {
 
     /////// TREE BUTTONS //////
     let tree1 = createButton("Tree1");
-    tree1.class("myTree")
+    tree1.class("myTree1")
     tree1.parent("tree1")
     tree1.attribute("value","tree1")
     tree1.mouseClicked(function(){
@@ -245,7 +246,7 @@ function setup() {
         mouseSprite.changeImage('tree1');
     })
     let tree2 = createButton("Tree2");
-    tree2.class("myTree")
+    tree2.class("myTree2")
     tree2.parent("tree2")
     tree2.attribute("value","tree2")
     tree2.mouseClicked(function(){
@@ -257,7 +258,7 @@ function setup() {
         mouseSprite.changeImage('tree2');
     })
     let tree3 = createButton("Tree3");
-    tree3.class("myTree")
+    tree3.class("myTree3")
     tree3.parent("tree3")
     tree3.attribute("value","tree3")
     tree3.mouseClicked(function(){
