@@ -43,6 +43,10 @@ let tempTreeSprite;
 let permanentTreeSprite;
 let received_treeJSON;
 
+let tree1Button;
+let tree2Button;
+let tree3Button;
+
 let nameInput;
 let urlInput;
 let commentInput;
@@ -228,7 +232,7 @@ function setup() {
     donate.mouseClicked(function(){
 
         let jsonData = sendTrees();
-        //currentPlacedState = placedState.NONE_PLACED;
+        currentPlacedState = placedState.NONE_PLACED;
 
         fetch("/addTrees", {
             method: 'POST', // or 'PUT'
@@ -246,35 +250,76 @@ function setup() {
     })
 
     /////// TREE BUTTONS //////
-    let tree1 = createButton("Tree1");
-    tree1.class("myTree1")
-    tree1.parent("tree1")
-    tree1.attribute("value","tree1")
-    tree1.mouseClicked(function(){
-        currentSelectState = selectedState.SELECTED;
-        currentTree = treeType.TREE1;
+    //——Button : Tree1
+    tree1Button = createButton("Tree1");
+    tree1Button.class("myTree1")
+    tree1Button.parent("tree1")
+    tree1Button.attribute("value","tree1")
+    tree1Button.mouseClicked(function(){
+
+        if(currentTree === treeType.NONE ){
+            //If not previously selected
+            currentSelectState = selectedState.SELECTED;
+            currentTree = treeType.TREE1;
+            tree1Button.addClass('Selected');
+        }
+        else if(currentTree === treeType.TREE1){
+            //If already selected tree1
+            currentSelectState = selectedState.NONE_SELECTED;
+            currentTree = treeType.NONE;
+            tree1Button.removeClass('Selected');
+        }
+        else if(currentTree !== treeType.TREE1){
+            //If already selected tree that is NOT tree1
+            currentSelectState = selectedState.SELECTED;
+            currentTree = treeType.TREE1;
+            tree1Button.addClass('Selected');
+            tree2Button.removeClass('Selected');
+            tree3Button.removeClass('Selected');
+        }
         //remove existing sprite before creating new sprite
         mouseSprite.remove();
         createMouseSprite();
         mouseSprite.changeImage('tree1');
     })
-    let tree2 = createButton("Tree2");
-    tree2.class("myTree2")
-    tree2.parent("tree2")
-    tree2.attribute("value","tree2")
-    tree2.mouseClicked(function(){
-        currentSelectState = selectedState.SELECTED;
-        currentTree = treeType.TREE2;
+
+    //——Button : Tree2
+    tree2Button = createButton("Tree2");
+    tree2Button.class("myTree2")
+    tree2Button.parent("tree2")
+    tree2Button.attribute("value","tree2")
+    tree2Button.mouseClicked(function(){
+
+        if(currentTree === treeType.NONE ){
+            //If not previously selected
+            currentSelectState = selectedState.SELECTED;
+            currentTree = treeType.TREE2;
+            tree2Button.addClass('Selected');
+        }
+        else if(currentTree === treeType.TREE2){
+            //If already selected tree1
+            currentSelectState = selectedState.NONE_SELECTED;
+            currentTree = treeType.NONE;
+            tree2Button.removeClass('Selected');
+        }
+        else if(currentTree !== treeType.TREE2){
+            //If already selected tree that is NOT tree1
+            currentSelectState = selectedState.SELECTED;
+            currentTree = treeType.TREE2;
+            tree2Button.addClass('Selected');
+            tree1Button.removeClass('Selected');
+            tree3Button.removeClass('Selected');
+        }
         //remove existing sprite before creating new sprite
         mouseSprite.remove();
         createMouseSprite();
         mouseSprite.changeImage('tree2');
     })
-    let tree3 = createButton("Tree3");
-    tree3.class("myTree3")
-    tree3.parent("tree3")
-    tree3.attribute("value","tree3")
-    tree3.mouseClicked(function(){
+    tree3Button = createButton("Tree3");
+    tree3Button.class("myTree3")
+    tree3Button.parent("tree3")
+    tree3Button.attribute("value","tree3")
+    tree3Button.mouseClicked(function(){
         currentSelectState = selectedState.SELECTED;
         currentTree = treeType.TREE2;
         //remove existing sprite before creating new sprite
@@ -377,10 +422,13 @@ function mouseHandle(){
         }
 
         console.log(tempTreeSprite);
+        tree1Button.removeClass('Selected');
+        tree2Button.removeClass('Selected');
+        tree3Button.removeClass('Selected');
 
         currentSelectState = selectedState.NONE_SELECTED;
-        currentPlacedState = placedState.TEMP_PLACED;
         currentTree = treeType.NONE;
+        currentPlacedState = placedState.TEMP_PLACED;
     }
 }
 
@@ -391,12 +439,14 @@ function draw(){
     // mouseSprite.y = mouseY;
 
     if (currentSelectState == selectedState.SELECTED){
+        cursor(CROSS);
         mouseSprite.velocity.x = (mouseX-mouseSprite.position.x)/10;
         mouseSprite.velocity.y = (mouseY-mouseSprite.position.y)/10;
         mouseSprite.collide(tempTreeSprite)
         mouseSprite.collide(permanentTreeSprite)
     } else {
         mouseSprite.remove();
+        cursor('default');
     }
     drawSprites();
 
@@ -427,6 +477,12 @@ function draw(){
         }
 
 }
+
+function keyPressed() {
+    if (keyCode === CONTROL) {
+    isDebugMode = !isDebugMode;
+    } 
+  }
 
 
 

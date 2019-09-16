@@ -58,14 +58,18 @@ max-width: 80vw;
 }
 
 .myTree1{
-	background-color: aqua;
+	background-color: whitesmoke;
 }
 
 .myTree2{
-	background-color: red;
+	background-color: whitesmoke;
 }
 
 .myTree3{
+	background-color: whitesmoke;
+}
+
+.Selected{
 	background-color: green;
 }
 
