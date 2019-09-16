@@ -1,3 +1,6 @@
+//trigger debug mode
+let isDebugMode = true;
+
 var socket;
 var slider;
 var sizecounter;
@@ -65,7 +68,7 @@ function createMouseSprite(){
     mouseSprite.addImage('tree2',imageTree2_temp);
     mouseSprite.setCollider('rectangle',0,0,25,25);
     // mouseSprite.setCollider('circle',0,0,10);
-    mouseSprite.debug = true;
+    mouseSprite.debug = isDebugMode;
 }
 
 
@@ -112,15 +115,13 @@ function renderInitialTrees(data){
 
             tree.setCollider('rectangle',0,0,25,25);
             // tree.setCollider('circle',0,0,10);
-            tree.debug = true;
+            tree.debug = isDebugMode;
 
             tree.onMouseOver = function(){
                 // Change to hover state animation
                 tree.changeAnimation('tree1_hover');
                 isOnHover = true;
                 hovered_tree = data[i];
-                console.log(hovered_tree);
-                console.log(isOnHover);
                 cursor('pointer');
               }
 
@@ -147,14 +148,12 @@ function renderInitialTrees(data){
 
             tree.setCollider('rectangle',0,0,25,25);
             // tree.setCollider('circle',0,0,10);
-            tree.debug = true;
+            tree.debug = isDebugMode;
 
             tree.onMouseOver = function(){
                 tree.changeAnimation('tree2_hover');
                 isOnHover = true;
-                hovered_tree = data[i];
-                console.log(hovered_tree);
-                console.log(isOnHover);
+                hovered_tree = data[i];                
                 cursor('pointer');
             }
 
@@ -212,7 +211,7 @@ function setup() {
     //     tree.addAnimation('tree1_temp', imageTree1);
     //     tree.setCollider('rectangle',0,0,25,25);
     //     // tree.setCollider('circle',0,0,10);
-    //     tree.debug = true;
+    //     tree.debug = isDebugMode;
     //     tempTreeSprite.add(tree);
     // }
 
@@ -227,9 +226,9 @@ function setup() {
     donate.parent("donateContainer")
     donate.attribute("value","donate")
     donate.mouseClicked(function(){
-        console.log("ASDFASDF")
 
         let jsonData = sendTrees();
+        //currentPlacedState = placedState.NONE_PLACED;
 
         fetch("/addTrees", {
             method: 'POST', // or 'PUT'
@@ -328,7 +327,7 @@ function mouseHandle(){
 
             tree.setCollider('rectangle',0,0,25,25);
             // tree.setCollider('circle',0,0,10);
-            tree.debug = true;
+            tree.debug = isDebugMode;
 
             tree.onMouseOver = function(){
                 tree.changeAnimation('tree1_temp_delete');
@@ -355,7 +354,7 @@ function mouseHandle(){
 
             tree.setCollider('rectangle',0,0,25,25);
             // tree.setCollider('circle',0,0,10);
-            tree.debug = true;
+            tree.debug = isDebugMode;
 
             tree.onMouseOver = function(){
                 tree.changeAnimation('tree2_temp_delete');
@@ -401,8 +400,18 @@ function draw(){
     }
     drawSprites();
 
-        if(isOnHover){
-            fill(255, 255, 255);
+
+    fill(255, 255, 255);
+    textSize(13);
+
+    if(isDebugMode){
+    text("Select State: " + currentSelectState, 20 , 20, 200, 100); 
+    text("Placed State: " +currentPlacedState, 20 , 40, 200, 100); 
+    text("Tree State: " +currentTree, 20 , 60, 200, 100); 
+    text("Debug : " +isDebugMode, 20 , 80, 200, 100); 
+    }
+
+    if(isOnHover){
 
             //NAME
             textSize(13);
