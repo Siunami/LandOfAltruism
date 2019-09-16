@@ -121,11 +121,18 @@ function renderInitialTrees(data){
                 hovered_tree = data[i];
                 console.log(hovered_tree);
                 console.log(isOnHover);
+                cursor('pointer');
               }
 
             tree.onMouseOut = function(){
                 tree.changeAnimation('tree1_permanent');
                 isOnHover = false;
+                cursor('default');
+
+            }
+
+            tree.onMousePressed = function(){
+                window.open(data[i].meta.url);
             }
 
             tree.changeAnimation('tree1_permanent');
@@ -148,11 +155,18 @@ function renderInitialTrees(data){
                 hovered_tree = data[i];
                 console.log(hovered_tree);
                 console.log(isOnHover);
+                cursor('pointer');
             }
 
             tree.onMouseOut = function(){
                 tree.changeAnimation('tree2_permanent');
                 isOnHover = false;
+                cursor('default');
+
+            }
+
+            tree.onMousePressed = function(){
+                window.open(data[i].meta.url);
             }
 
             tree.changeAnimation('tree2_permanent');
@@ -278,10 +292,13 @@ function setup() {
     urlInput = createInput("");
     urlInput.class("name")
     urlInput.parent("urlInput")
+    urlInput.attribute("value","https://tinyfactories.space")
+
 
     commentInput = createInput("");
     commentInput.class("name")
     commentInput.parent("commentInput")
+    commentInput.attribute("value","I love planting trees so much! Keep it going")
 
 
     var canvas = createCanvas(windowWidth,(windowHeight)-controlsHEIGHT);
