@@ -32,8 +32,12 @@ let currentSelectState;
 let currentPlacedState;
 let currentTree;
 
+let hovered_tree;
+let isOnHover = false;
+
 let tempTreeSprite;
 let permanentTreeSprite;
+let received_treeJSON;
 
 let nameInput;
 let urlInput;
@@ -87,6 +91,8 @@ function sendTrees(){
     return sendTreeList;
 }
 
+
+
 function renderInitialTrees(data){
     //Deletes current permanent tree sprite to refresh the screen
     let length_perm = permanentTreeSprite.length;
@@ -94,15 +100,14 @@ function renderInitialTrees(data){
         permanentTreeSprite[0].remove();
     }
 
-    console.log("Permanent tree sprite is ↓");
-    console.log(permanentTreeSprite);
+
     for (let i in data){
         if (data[i]["treetype"] == treeType.TREE1){
             let tree = createSprite(data[i]["x"],data[i]["y"],imageTree1Width,imageTree1Height)
             // TODO: New Animation for permanent tree here
             tree.addAnimation('tree1_permanent', imageTree1);
             tree.addAnimation('tree1_hover', imageTree1_hover);
-
+            
 
             tree.setCollider('rectangle',0,0,25,25);
             // tree.setCollider('circle',0,0,10);
@@ -111,10 +116,15 @@ function renderInitialTrees(data){
             tree.onMouseOver = function(){
                 // Change to hover state animation
                 tree.changeAnimation('tree1_hover');
-            }
+                isOnHover = true;
+                hovered_tree = data[i];
+                console.log(hovered_tree);
+                console.log(isOnHover);
+              }
 
             tree.onMouseOut = function(){
                 tree.changeAnimation('tree1_permanent');
+                isOnHover = false;
             }
 
             tree.changeAnimation('tree1_permanent');
@@ -143,7 +153,8 @@ function renderInitialTrees(data){
             permanentTreeSprite.add(tree);
         }
     }
-    //console.log(permanentTreeSprite)
+    console.log("permanent Tree Sprite is ↓")
+    console.log(permanentTreeSprite)
 }
 
 function fetchServerData(){
@@ -153,9 +164,12 @@ function fetchServerData(){
     })
     .then(function(data){
         console.log("Tree data received from server↓")
-        console.log(data)
+        received_treeJSON = data;
+        console.log(received_treeJSON);
+
+        //Draw permanent trees
+        renderInitialTrees(data);
         //Delete the temporary tree sprites
-        renderInitialTrees(data)
         let length = tempTreeSprite.length;
         for (var i = 0 ; i < length ; i++){
             tempTreeSprite[0].remove();
@@ -353,6 +367,7 @@ function draw(){
     background(51);
     // mouseSprite.x = mouseX;
     // mouseSprite.y = mouseY;
+
     if (currentSelectState == selectedState.SELECTED){
         mouseSprite.velocity.x = (mouseX-mouseSprite.position.x)/10;
         mouseSprite.velocity.y = (mouseY-mouseSprite.position.y)/10;
@@ -362,6 +377,23 @@ function draw(){
         mouseSprite.remove();
     }
     drawSprites();
+
+        if(isOnHover){
+            fill(255, 255, 255);
+
+            //NAME
+            textSize(13);
+            text("$" + hovered_tree.meta.payment_data, hovered_tree.x + imageTree1Width/2, hovered_tree.y - 20, 150, 100); 
+
+            //NAME
+            textSize(18);
+            text(hovered_tree.meta.name, hovered_tree.x + imageTree1Width/2, hovered_tree.y, 250, 100); 
+            //Comment
+            textSize(12);
+            text(hovered_tree.meta.comment, hovered_tree.x + imageTree1Width/2, hovered_tree.y + 30, 250, 100);
+
+        }
+
 }
 
 
