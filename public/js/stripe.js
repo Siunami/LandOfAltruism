@@ -4,10 +4,6 @@ var SKU_ID = "sku_FoTjBWEVlHGL2x";
 
 var stripe = Stripe(PUBLIC_KEY);
 
-function handleResult(){
-
-}
-
 // setTimeout(function(){
 //     var donateButton = document.getElementsByClassName("donate")[0];
 

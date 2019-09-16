@@ -34,12 +34,13 @@ const getSavedData = () => {
     return jsonData
 }
 
-let allTrees = [];
+let allTrees = getSavedData();
 
 app.post('/addTrees', function(req,res){
     // Save data
     console.log(req.body);
     allTrees = allTrees.concat(req.body);
+    fs.writeFileSync('treeData.json', JSON.stringify(allTrees));
     res.send('Got POST request')
 })
 
