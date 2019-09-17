@@ -5,21 +5,13 @@ var socket;
 var slider;
 var sizecounter;
 
-let imageTree1;
-let imageTree1Width = 50;
-let imageTree1Height = 67;
 
-let imageTree2;
-let imageTree2Width = 50;
-let imageTree2Height = 72;
-
-let = controlsHEIGHT = 120;
+//State Switcher
 
 const selectedState = {
     'NONE_SELECTED': 'none_selected',
     'SELECTED': 'selected'
 }
-
 
 const placedState = {
     "NONE_PLACED":"none_placed",
@@ -29,7 +21,8 @@ const placedState = {
 const treeType = {
     'NONE':'none',
     'TREE1': 'tree1',
-    'TREE2': 'tree2'
+    'TREE2': 'tree2',
+    'TREE3': 'tree3'
 }
 
 let currentSelectState;
@@ -51,6 +44,22 @@ let nameInput;
 let urlInput;
 let commentInput;
 
+let controlsHEIGHT = 120;
+
+
+//Loading Images
+let imageTree1;
+let imageTree1Width = 50;
+let imageTree1Height = 67;
+
+let imageTree2;
+let imageTree2Width = 50;
+let imageTree2Height = 72;
+
+let imageTree3;
+let imageTree3Width = 50;
+let imageTree3Height = 72;
+
 function preload(){
     imageTree1 = loadImage('tree1.png');
     imageTree1_hover = loadImage('tree1_hover.png');
@@ -61,144 +70,18 @@ function preload(){
     imageTree2_hover = loadImage('tree2_hover.png');
     imageTree2_temp = loadImage('tree2_temp.png');
     imageTree2_delete = loadImage('tree2_temp_del.png');
+
+    imageTree3 = loadImage('tree3_001.png');
+    imageTree3_ani1 = loadImage('tree3_001.png');
+    imageTree3_ani2 = loadImage('tree3_002.png');
+    imageTree3_ani3 = loadImage('tree3_003.png');
+    imageTree3_ani4 = loadImage('tree3_004.png');
+
+    imageTree3_hover = loadImage('tree3_hover.png');
+    imageTree3_temp = loadImage('tree3_temp.png');
+    imageTree3_delete = loadImage('tree3_temp_del.png');
 }
 
-let mouseSprite;
-
-// Helper function for setup
-function createMouseSprite(){
-    mouseSprite = createSprite(mouseX,mouseY)
-    mouseSprite.addImage('tree1',imageTree1_temp);
-    mouseSprite.addImage('tree2',imageTree2_temp);
-    mouseSprite.setCollider('rectangle',0,0,25,25);
-    // mouseSprite.setCollider('circle',0,0,10);
-    mouseSprite.debug = isDebugMode;
-}
-
-
-// Helper function for setup
-function sendTrees(){
-    //Convert current tree position into JSON files to send to the server
-
-    let sendTreeList = [];
-    for (var i = 0 ; i < tempTreeSprite.length ; i++){
-        sendTreeList.push({
-            "x":tempTreeSprite[i].position.x, 
-            "y":tempTreeSprite[i].position.y,
-            "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0],
-            "meta": {
-                "name":nameInput.value(),
-                "date": new Date(),
-                "url":urlInput.value(),
-                "comment":commentInput.value(),
-                "payment_data":50
-            }
-        })
-    }
-
-    return sendTreeList;
-}
-
-
-
-function renderInitialTrees(data){
-    //Deletes current permanent tree sprite to refresh the screen
-    let length_perm = permanentTreeSprite.length;
-    for (var i = 0 ; i < length_perm ; i++){
-        permanentTreeSprite[0].remove();
-    }
-
-
-    for (let i in data){
-        if (data[i]["treetype"] == treeType.TREE1){
-            let tree = createSprite(data[i]["x"],data[i]["y"],imageTree1Width,imageTree1Height)
-            // TODO: New Animation for permanent tree here
-            tree.addAnimation('tree1_permanent', imageTree1);
-            tree.addAnimation('tree1_hover', imageTree1_hover);
-            
-
-            tree.setCollider('rectangle',0,0,25,25);
-            // tree.setCollider('circle',0,0,10);
-            tree.debug = isDebugMode;
-
-            tree.onMouseOver = function(){
-                // Change to hover state animation
-                tree.changeAnimation('tree1_hover');
-                isOnHover = true;
-                hovered_tree = data[i];
-                cursor('pointer');
-              }
-
-            tree.onMouseOut = function(){
-                tree.changeAnimation('tree1_permanent');
-                isOnHover = false;
-                cursor('default');
-
-            }
-
-            tree.onMousePressed = function(){
-                window.open(data[i].meta.url);
-            }
-
-            tree.changeAnimation('tree1_permanent');
-            permanentTreeSprite.add(tree);
-
-        } else if (data[i]["treetype"] == treeType.TREE2) {
-            let tree = createSprite(data[i]["x"],data[i]["y"],imageTree2Width,imageTree2Height)
-            // TODO: New Animation for permanent tree here
-            tree.addAnimation('tree2_permanent', imageTree2);
-            tree.addAnimation('tree2_hover', imageTree2_hover);
-
-
-            tree.setCollider('rectangle',0,0,25,25);
-            // tree.setCollider('circle',0,0,10);
-            tree.debug = isDebugMode;
-
-            tree.onMouseOver = function(){
-                tree.changeAnimation('tree2_hover');
-                isOnHover = true;
-                hovered_tree = data[i];                
-                cursor('pointer');
-            }
-
-            tree.onMouseOut = function(){
-                tree.changeAnimation('tree2_permanent');
-                isOnHover = false;
-                cursor('default');
-
-            }
-
-            tree.onMousePressed = function(){
-                window.open(data[i].meta.url);
-            }
-
-            tree.changeAnimation('tree2_permanent');
-            permanentTreeSprite.add(tree);
-        }
-    }
-    console.log("permanent Tree Sprite is ↓")
-    console.log(permanentTreeSprite)
-}
-
-function fetchServerData(){
-    fetch('/getTrees')
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data){
-        console.log("Tree data received from server↓")
-        received_treeJSON = data;
-        console.log(received_treeJSON);
-
-        //Draw permanent trees
-        renderInitialTrees(data);
-        //Delete the temporary tree sprites
-        let length = tempTreeSprite.length;
-        for (var i = 0 ; i < length ; i++){
-            tempTreeSprite[0].remove();
-        }
-    })
-}
 
 function setup() {
     currentSelectState = selectedState.NONE_SELECTED;
@@ -297,13 +180,13 @@ function setup() {
             tree2Button.addClass('Selected');
         }
         else if(currentTree === treeType.TREE2){
-            //If already selected tree1
+            //If already selected tree2
             currentSelectState = selectedState.NONE_SELECTED;
             currentTree = treeType.NONE;
             tree2Button.removeClass('Selected');
         }
         else if(currentTree !== treeType.TREE2){
-            //If already selected tree that is NOT tree1
+            //If already selected tree that is NOT tree2
             currentSelectState = selectedState.SELECTED;
             currentTree = treeType.TREE2;
             tree2Button.addClass('Selected');
@@ -315,18 +198,40 @@ function setup() {
         createMouseSprite();
         mouseSprite.changeImage('tree2');
     })
+
+   //——Button : Tree3
     tree3Button = createButton("Tree3");
     tree3Button.class("myTree3")
     tree3Button.parent("tree3")
     tree3Button.attribute("value","tree3")
     tree3Button.mouseClicked(function(){
-        currentSelectState = selectedState.SELECTED;
-        currentTree = treeType.TREE2;
+
+        if(currentTree === treeType.NONE ){
+            //If not previously selected
+            currentSelectState = selectedState.SELECTED;
+            currentTree = treeType.TREE3;
+            tree3Button.addClass('Selected');
+        }
+        else if(currentTree === treeType.TREE3){
+            //If already selected tree3
+            currentSelectState = selectedState.NONE_SELECTED;
+            currentTree = treeType.NONE;
+            tree3Button.removeClass('Selected');
+        }
+        else if(currentTree !== treeType.TREE3){
+            //If already selected tree that is NOT tree3
+            currentSelectState = selectedState.SELECTED;
+            currentTree = treeType.TREE3;
+            tree3Button.addClass('Selected');
+            tree1Button.removeClass('Selected');
+            tree2Button.removeClass('Selected');
+        }
         //remove existing sprite before creating new sprite
         mouseSprite.remove();
-        createMouseSprite()
-        mouseSprite.changeImage('tree2')
+        createMouseSprite();
+        mouseSprite.changeImage('tree3');
     })
+
     //////////// USER INPUT ////////
     nameInput = createInput("");
     nameInput.class("name")
@@ -356,6 +261,173 @@ function setup() {
     //   socket = io.connect('http://localhost:3000');
 }
 
+let mouseSprite;
+
+// Helper function for setup
+function createMouseSprite(){
+    mouseSprite = createSprite(mouseX,mouseY)
+    mouseSprite.addImage('tree1',imageTree1_temp);
+    mouseSprite.addImage('tree2',imageTree2_temp);
+    mouseSprite.addImage('tree3',imageTree3_temp);
+    mouseSprite.setCollider('rectangle',0,0,25,25);
+    cursor(CROSS);
+    // mouseSprite.setCollider('circle',0,0,10);
+    mouseSprite.debug = isDebugMode;
+}
+
+
+// Helper function for setup
+function sendTrees(){
+    //Convert current tree position into JSON files to send to the server
+
+    let sendTreeList = [];
+    for (var i = 0 ; i < tempTreeSprite.length ; i++){
+        sendTreeList.push({
+            "x":tempTreeSprite[i].position.x, 
+            "y":tempTreeSprite[i].position.y,
+            "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0],
+            "meta": {
+                "name":nameInput.value(),
+                "date": new Date(),
+                "url":urlInput.value(),
+                "comment":commentInput.value(),
+                "payment_data":50
+            }
+        })
+    }
+
+    return sendTreeList;
+}
+
+
+
+function renderInitialTrees(data){
+    //Deletes current permanent tree sprite to refresh the screen
+    let length_perm = permanentTreeSprite.length;
+    for (var i = 0 ; i < length_perm ; i++){
+        permanentTreeSprite[0].remove();
+    }
+
+
+    for (let i in data){
+        //———————————T R E E 1 (PERMANENT) ————————————!
+        if (data[i]["treetype"] == treeType.TREE1){
+            let tree = createSprite(data[i]["x"],data[i]["y"],imageTree1Width,imageTree1Height)
+            // TODO: New Animation for permanent tree here
+            tree.addAnimation('tree1_permanent', imageTree1);
+            tree.addAnimation('tree1_hover', imageTree1_hover);
+
+            tree.setCollider('rectangle',0,0,25,25);
+            // tree.setCollider('circle',0,0,10);
+            tree.debug = isDebugMode;
+
+            tree.onMouseOver = function(){
+                // Change to hover state animation
+                tree.changeAnimation('tree1_hover');
+                isOnHover = true;
+                hovered_tree = data[i];
+                cursor('pointer');
+              }
+
+            tree.onMouseOut = function(){
+                tree.changeAnimation('tree1_permanent');
+                isOnHover = false;
+                cursor('default');
+
+            }
+
+            tree.onMousePressed = function(){
+                window.open(data[i].meta.url);
+            }
+
+            tree.changeAnimation('tree1_permanent');
+            permanentTreeSprite.add(tree);
+
+        }  //———————————T R E E 2 (PERMANENT) ————————————!
+        else if (data[i]["treetype"] == treeType.TREE2) {
+            let tree = createSprite(data[i]["x"],data[i]["y"],imageTree2Width,imageTree2Height)
+    
+            tree.addAnimation('tree2_permanent', imageTree2);
+            tree.addAnimation('tree2_hover', imageTree2_hover);
+
+            tree.setCollider('rectangle',0,0,25,25);
+            // tree.setCollider('circle',0,0,10);
+            tree.debug = isDebugMode;
+
+            tree.onMouseOver = function(){
+                tree.changeAnimation('tree2_hover');
+                isOnHover = true;
+                hovered_tree = data[i];                
+                cursor('pointer');
+            }
+
+            tree.onMouseOut = function(){
+                tree.changeAnimation('tree2_permanent');
+                isOnHover = false;
+                cursor('default');
+            }
+
+            tree.onMousePressed = function(){
+                window.open(data[i].meta.url);
+            }
+            tree.changeAnimation('tree2_permanent');
+            permanentTreeSprite.add(tree);
+
+        } //———————————T R E E 3 (PERMANENT) ————————————!
+        else if (data[i]["treetype"] == treeType.TREE3) {
+            let tree = createSprite(data[i]["x"],data[i]["y"],imageTree3Width,imageTree3Height)
+            tree.addAnimation('tree3_permanent', imageTree3_ani1,imageTree3_ani2,imageTree3_ani3);
+            tree.addAnimation('tree3_hover', imageTree3_hover);
+
+            tree.setCollider('rectangle',0,0,25,25);
+            // tree.setCollider('circle',0,0,10);
+            tree.debug = isDebugMode;
+
+            tree.onMouseOver = function(){
+                tree.changeAnimation('tree3_hover');
+                isOnHover = true;
+                hovered_tree = data[i];                
+                cursor('pointer');
+            }
+
+            tree.onMouseOut = function(){
+                tree.changeAnimation('tree3_permanent');
+                isOnHover = false;
+                cursor('default');
+            }
+
+            tree.onMousePressed = function(){
+                window.open(data[i].meta.url);
+            }
+            tree.changeAnimation('tree3_permanent');
+            permanentTreeSprite.add(tree);
+        }
+    }
+    console.log("permanent Tree Sprite is ↓")
+    console.log(permanentTreeSprite)
+}
+
+function fetchServerData(){
+    fetch('/getTrees')
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log("Tree data received from server↓")
+        received_treeJSON = data;
+        console.log(received_treeJSON);
+
+        //Draw permanent trees
+        renderInitialTrees(data);
+        //Delete the temporary tree sprites
+        let length = tempTreeSprite.length;
+        for (var i = 0 ; i < length ; i++){
+            tempTreeSprite[0].remove();
+        }
+    })
+}
+
+
 function windowResized(){
     resizeCanvas(windowWidth,(windowHeight)-controlsHEIGHT);
 }
@@ -364,7 +436,7 @@ function mouseHandle(){
     if (currentSelectState == selectedState.SELECTED){
         console.log([currentSelectState,currentTree])
 
-        // TODO: Bounding box avoid too much tree overlap algorithm
+        //———————————T R E E 1 (TEMPORARY) ————————————!
         if (currentTree == treeType.TREE1){
             let tree = createSprite(mouseSprite.position.x,mouseSprite.position.y,imageTree1Width,imageTree1Height)
             tree.addAnimation('tree1_temp', imageTree1_temp);
@@ -385,14 +457,17 @@ function mouseHandle(){
             tree.onMousePressed = function(){
                 if (currentSelectState == selectedState.NONE_SELECTED){
                     tree.remove()
-                    console.log(tempTreeSprite);
+                    if(tempTreeSprite.length==0){
+                        currentPlacedState = placedState.NONE_PLACED;
+                    }
                 }
             }
 
             tree.changeAnimation('tree1_temp');
             tempTreeSprite.add(tree);
 
-        } else if (currentTree == treeType.TREE2) {
+        } //———————————T R E E 2 (TEMPORARY) ————————————!
+        else if (currentTree == treeType.TREE2) {
             let tree = createSprite(mouseSprite.position.x,mouseSprite.position.y,imageTree2Width,imageTree2Height)
             tree.addAnimation('tree2_temp', imageTree2_temp);
             tree.addAnimation('tree2_temp_delete', imageTree2_delete);
@@ -412,16 +487,47 @@ function mouseHandle(){
             tree.onMousePressed = function(){
                 if (currentSelectState == selectedState.NONE_SELECTED){
                     tree.remove()
-                    console.log(tempTreeSprite);
+                    if(tempTreeSprite.length==0){
+                        currentPlacedState = placedState.NONE_PLACED;
+                    }
                 }
             }
-
             tree.changeAnimation('tree2_temp');
             tempTreeSprite.add(tree);
 
+        } //———————————T R E E 3 (TEMPORARY) ————————————!
+        else if (currentTree == treeType.TREE3) {
+            let tree = createSprite(mouseSprite.position.x,mouseSprite.position.y,imageTree3Width,imageTree3Height)
+            tree.addAnimation('tree3_temp', imageTree3_temp);
+            tree.addAnimation('tree3_temp_delete', imageTree3_delete);
+
+            tree.setCollider('rectangle',0,0,25,25);
+            // tree.setCollider('circle',0,0,10);
+            tree.debug = isDebugMode;
+
+            tree.onMouseOver = function(){
+                tree.changeAnimation('tree3_temp_delete');
+            }
+
+            tree.onMouseOut = function(){
+                tree.changeAnimation('tree3_temp');
+            }
+
+            tree.onMousePressed = function(){
+                if (currentSelectState == selectedState.NONE_SELECTED){
+                    tree.remove()
+                    if(tempTreeSprite.length==0){
+                        currentPlacedState = placedState.NONE_PLACED;
+                    }
+                }
+            }
+            tree.changeAnimation('tree3_temp');
+            tempTreeSprite.add(tree);
         }
 
-        console.log(tempTreeSprite);
+        //———————————AFTER EACH CLICK EVENT ON CANVAS ————————————!
+        cursor('default');
+
         tree1Button.removeClass('Selected');
         tree2Button.removeClass('Selected');
         tree3Button.removeClass('Selected');
@@ -435,18 +541,14 @@ function mouseHandle(){
 
 function draw(){
     background(51);
-    // mouseSprite.x = mouseX;
-    // mouseSprite.y = mouseY;
 
     if (currentSelectState == selectedState.SELECTED){
-        cursor(CROSS);
         mouseSprite.velocity.x = (mouseX-mouseSprite.position.x)/10;
         mouseSprite.velocity.y = (mouseY-mouseSprite.position.y)/10;
         mouseSprite.collide(tempTreeSprite)
         mouseSprite.collide(permanentTreeSprite)
     } else {
         mouseSprite.remove();
-        cursor('default');
     }
     drawSprites();
 
@@ -458,7 +560,7 @@ function draw(){
     text("Select State: " + currentSelectState, 20 , 20, 200, 100); 
     text("Placed State: " +currentPlacedState, 20 , 40, 200, 100); 
     text("Tree State: " +currentTree, 20 , 60, 200, 100); 
-    text("Debug : " +isDebugMode, 20 , 80, 200, 100); 
+    text("Toggle Debug with CONTROL key ", 20 , 80, 200, 100); 
     }
 
     if(isOnHover){
@@ -473,7 +575,7 @@ function draw(){
             //Comment
             textSize(12);
             text(hovered_tree.meta.comment, hovered_tree.x + imageTree1Width/2, hovered_tree.y + 30, 250, 100);
-
+           
         }
 
 }
