@@ -25,6 +25,12 @@ const treeType = {
     'TREE3': 'tree3'
 }
 
+const treePrices = {
+    "tree1": 3,
+    "tree2": 3,
+    "tree3": 3
+}
+
 let currentSelectState;
 let currentPlacedState;
 let currentTree;
@@ -91,46 +97,35 @@ function setup() {
     permanentTreeSprite = new Group();
     mouseSprite = createSprite(-50,-50);
 
-    // Generate 100 trees
-
-    // for (var i = 0; i < 100; i++){
-    //     let tree = createSprite(Math.floor(Math.random() * WIDTH) + 1, Math.floor(Math.random() * HEIGHT) + 1,imageTree1Width,imageTree1Height)
-    //     tree.addAnimation('tree1_temp', imageTree1);
-    //     tree.setCollider('rectangle',0,0,25,25);
-    //     // tree.setCollider('circle',0,0,10);
-    //     tree.debug = isDebugMode;
-    //     tempTreeSprite.add(tree);
-    // }
-
     // PROBLEM: Two people trying to create a tree on the same spot.
 
     /////// GET INITIAL DATA //////
     fetchServerData()
 
     /////// DONATE BUTTON //////
-    let donate = createButton("donate");
-    donate.class("donate")
-    donate.parent("donateContainer")
-    donate.attribute("value","donate")
-    donate.mouseClicked(function(){
+    // let donate = createButton("donate");
+    // donate.class("donate")
+    // donate.parent("donateContainer")
+    // donate.attribute("value","donate")
+    // donate.mouseClicked(function(){
 
-        let jsonData = sendTrees();
-        currentPlacedState = placedState.NONE_PLACED;
+    //     let jsonData = sendTrees();
+    //     currentPlacedState = placedState.NONE_PLACED;
 
-        fetch("/addTrees", {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(jsonData), // data can be `string` or {object}!
-            headers:{
-              'Content-Type': 'application/json'
-            }
-        })
-        // .then(res => res.json())
-        .then((response) => {
-            console.log('Success:', JSON.stringify(response))
-            fetchServerData()
-        })
-        .catch(error => console.error('Error:', error));
-    })
+    //     fetch("/addTrees", {
+    //         method: 'POST', // or 'PUT'
+    //         body: JSON.stringify(jsonData), // data can be `string` or {object}!
+    //         headers:{
+    //           'Content-Type': 'application/json'
+    //         }
+    //     })
+    //     // .then(res => res.json())
+    //     .then((response) => {
+    //         console.log('Success:', JSON.stringify(response))
+    //         fetchServerData()
+    //     })
+    //     .catch(error => console.error('Error:', error));
+    // })
 
     /////// TREE BUTTONS //////
     //——Button : Tree1
@@ -424,12 +419,27 @@ function fetchServerData(){
         for (var i = 0 ; i < length ; i++){
             tempTreeSprite[0].remove();
         }
+        updateBuyButton()
     })
 }
 
 
 function windowResized(){
     resizeCanvas(windowWidth,(windowHeight)-controlsHEIGHT);
+}
+
+function updateBuyButton(){
+    let total = document.getElementById("total");
+    let cardTotal = document.getElementById("card-total");
+
+    let amount = 0;
+    for (let i = 0; i < tempTreeSprite.length;i++){
+        let treeType = tempTreeSprite[i].getAnimationLabel().split("_")[0]
+        amount += treePrices[treeType];
+    }
+
+    cardTotal.innerHTML = "$" + amount + ".00";
+    total.innerHTML = amount;
 }
 
 function mouseHandle(){
@@ -457,6 +467,7 @@ function mouseHandle(){
             tree.onMousePressed = function(){
                 if (currentSelectState == selectedState.NONE_SELECTED){
                     tree.remove()
+                    updateBuyButton()
                     if(tempTreeSprite.length==0){
                         currentPlacedState = placedState.NONE_PLACED;
                     }
@@ -487,6 +498,7 @@ function mouseHandle(){
             tree.onMousePressed = function(){
                 if (currentSelectState == selectedState.NONE_SELECTED){
                     tree.remove()
+                    updateBuyButton()
                     if(tempTreeSprite.length==0){
                         currentPlacedState = placedState.NONE_PLACED;
                     }
@@ -516,6 +528,7 @@ function mouseHandle(){
             tree.onMousePressed = function(){
                 if (currentSelectState == selectedState.NONE_SELECTED){
                     tree.remove()
+                    updateBuyButton()
                     if(tempTreeSprite.length==0){
                         currentPlacedState = placedState.NONE_PLACED;
                     }
@@ -524,6 +537,10 @@ function mouseHandle(){
             tree.changeAnimation('tree3_temp');
             tempTreeSprite.add(tree);
         }
+
+        //--------UPDATE BUY BUTTON---------//
+
+        updateBuyButton();
 
         //———————————AFTER EACH CLICK EVENT ON CANVAS ————————————!
         cursor('default');
