@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+
+
 body {
 	padding: 0px;
 	margin: 0px;
-	font-family: Roboto;
+	font-family: 'VT323', monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
 	color: #333;
 	background-color: #e2e2e0;
 }
+h1 h2 h3 p{
+ text-align: left;
+}
+
+
 
 #wrapper {
-	text-align: center;
 }
 
 #canvas-holder {
@@ -15,7 +23,7 @@ body {
 }
 
 canvas {
-	border-radius: 8px;
+	/* border-radius: 8px; */
 	width:100vw;
 }
 
@@ -27,13 +35,48 @@ canvas {
 
 .column {
   flex-basis: 100%;
+	/* border-top: 5px solid red; */
 }
+
 
 
 #controls{
-max-width: 80vw;
-
+position:fixed;
+bottom:-50px;
+height:250px;
+width:80vw;
+align-content: center;
+border-width: 4px;
+border-style: solid;
+border-color: #000;
+border-radius: 25px;
+background:#90C64F;
+margin-left: 10vw;
+margin-right: 10vw;
+padding: 0 1.5vw 0 1.5vw;
 }
+
+
+#controls .treeButton{
+	border-radius: 5px;
+	border: 5px solid #000;
+	height:100px;
+	weight:100px;
+}
+#controls .metaInput{
+	border-radius: 5px;
+	border: 5px solid #fff;
+}
+#controls .donateButton{
+	border-radius: 5px;
+	border: 3px solid #fff;
+}
+
+.numberAlign{
+	max-width: 30px;
+}
+
+
 #slider {
 	position: relative;
 	top: 2px;
@@ -57,17 +100,79 @@ max-width: 80vw;
 	background-color: #d2d2d0;
 }
 
-.myTree1{
-	background-color: whitesmoke;
+.nestedLayout{
+	margin: 80px 0 80px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nestedElements{
+	padding: 40px;
+  position: relative;
 }
 
+.myTree1{
+	background-color: #EBF4B3;
+	background-image: url("tree1.png");
+	background-repeat: no-repeat;
+	min-width: 74px;
+	border-radius:13px;
+	border: 3px solid #000;
+	min-height:82px;
+
+	background-size: cover; /* Resize the background image to cover the entire container */
+}
+.myTree1:hover{
+	background-color: red;
+
+}
+
+
 .myTree2{
-	background-color: whitesmoke;
+	background-color: #EBF4B3;
+	background-image: url("tree2.png");
+	background-repeat: no-repeat;
+	min-width: 74px;
+	border-radius:13px;
+	border: 3px solid #000;
+	min-height:82px;
+
+	background-size: cover; /* Resize the background image to cover the entire container */
+
+}
+.myTree2:hover{
+	background-color: red;
+
 }
 
 .myTree3{
-	background-color: whitesmoke;
+	background-color: #EBF4B3;
+	background-image: url("tree3_001.png");
+	background-repeat: no-repeat;
+	min-width: 74px;
+	border-radius:13px;
+	border: 3px solid #000;
+	min-height:82px;
+
+	background-size: cover; /* Resize the background image to cover the entire container */
+
 }
+.myTree3:hover{
+	background-color: red;
+
+}
+
+
+
+/* #controls .treeButton{
+	border-radius: 5px;
+	border: 5px solid #000;
+	height:100px;
+	weight:100px;
+} */
+
+
 
 .Selected{
 	background-color: green;

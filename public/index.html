@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="author" content="Matthew Siu">
@@ -17,52 +18,99 @@
   <script src="./js/stripe.js" type="text/javascript"></script>
 
 
- <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="index.css">
 </head>
+
 <body>
   <div id="wrapper">
     <div id="canvas-holder">
     </div>
     <div class="row" id="controls">
       <div class="column">
-        <h2>1. Section</h2>
-        <hr/>
-        <span id="tree1"></span><span id="tree1"></span>
-        <span id="tree1"></span><span id="tree2"></span>
-        <span id="tree1"></span><span id="tree3"></span>
+        <div class="row">
+          <div class="column numberAlign">
+            <h2>1.</h2>
+          </div>
+          <div class="column">
+
+            <h2>Select tree and plant</h2>
+            <br />
+            <span id="tree1"></span><span id="tree1"></span>
+            <span id="tree1"></span><span id="tree2"></span>
+            <span id="tree1"></span><span id="tree3"></span>
+          </div>
+        </div>
       </div>
 
       <div class="column">
-        <h2>2. Section</h2>
-        <hr/>
-        <span>Name: <span id="nameInput"></span></span>
-      </br>
-        <span>URL: </span><span id="urlInput"></span></span>
-      </br>
-        <span>Comment: <span id="commentInput"></span></span>
+        <div class="row">
+          <div class="column numberAlign">
+            <h2>2.</h2>
+          </div>
+          <div class="column">
+           
+            <h2>Fill out your tree tag</h2>
+            <span>Name: <span id="nameInput"></span></span>
+            <br/>
+            <span>URL: </span><span id="urlInput"></span></span>
+            </br>
+            <span>Comment: <span id="commentInput"></span></span>
+          </div>
+        </div>
       </div>
 
       <div class="column">
-        <h2>3. Section</h2>
-        <hr/>
-        <span id="donateContainer"></span>
-        <button id="submit">
-          Buy for $<span id="total">5</span>.00
-        </button>
-        <div id="error-message"></div>
+        <div class="row">
+          <div class="column numberAlign">
+            <h2>3</h2>
 
+          </div>
+          <div class="column">
+
+            <h2>Make your donation</h2>
+            <span id="donateContainer"></span>
+            <button id="submit">
+              Buy for $<span id="total">5</span>.00
+            </button>
+            <div id="error-message"></div>
+          </div>
+        </div>
       </div>
-      <!-- <span>Trees <span id="tree1"></span><span id="tree2"></span></span> -->
-      <!-- <span>Pen size <span id="slider"></span>  <span class="sizecounter"></span></span> -->
-      <!-- <span id="download" onclick="saveCanvas()">DOWNLOAD IMAGE</span> -->
+      <!-- <div class="column nestedLayout">
+        <div class="">
+
+        </div>
+
+      </div> -->
+
+      <!-- <div class="column nestedLayout">
+
+        <div class="nestedElements">
+
+        </div>
+
+      </div> -->
+
+      <!-- <div class="column nestedLayout">
+        <div class="nestedElements">
+
+        </div> -->
+
+
+
     </div>
+    <!-- <span>Trees <span id="tree1"></span><span id="tree2"></span></span> -->
+    <!-- <span>Pen size <span id="slider"></span>  <span class="sizecounter"></span></span> -->
+    <!-- <span id="download" onclick="saveCanvas()">DOWNLOAD IMAGE</span> -->
+  </div>
   </div>
   <script>
     function saveCanvas() {
       var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
       window.location.href = image;
     }
-    </script>
+  </script>
 </body>
+
 </html>
