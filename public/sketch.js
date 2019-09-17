@@ -50,7 +50,6 @@ let nameInput;
 let urlInput;
 let commentInput;
 
-let controlsHEIGHT = 120;
 
 
 //Loading Images
@@ -129,7 +128,7 @@ function setup() {
 
     /////// TREE BUTTONS //////
     //——Button : Tree1
-    tree1Button = createButton("Tree1");
+    tree1Button = createButton("");
     tree1Button.class("myTree1")
     tree1Button.parent("tree1")
     tree1Button.attribute("value","tree1")
@@ -162,7 +161,7 @@ function setup() {
     })
 
     //——Button : Tree2
-    tree2Button = createButton("Tree2");
+    tree2Button = createButton("");
     tree2Button.class("myTree2")
     tree2Button.parent("tree2")
     tree2Button.attribute("value","tree2")
@@ -195,7 +194,7 @@ function setup() {
     })
 
    //——Button : Tree3
-    tree3Button = createButton("Tree3");
+    tree3Button = createButton("");
     tree3Button.class("myTree3")
     tree3Button.parent("tree3")
     tree3Button.attribute("value","tree3")
@@ -245,7 +244,7 @@ function setup() {
     commentInput.attribute("value","I love planting trees so much! Keep it going")
 
 
-    var canvas = createCanvas(windowWidth,(windowHeight)-controlsHEIGHT);
+    var canvas = createCanvas(windowWidth,windowHeight);
     canvas.class('canvas');
     canvas.parent('canvas-holder');
     //Activates the tree planting function
@@ -278,7 +277,7 @@ function sendTrees(){
     let sendTreeList = [];
     for (var i = 0 ; i < tempTreeSprite.length ; i++){
         sendTreeList.push({
-            "x":tempTreeSprite[i].position.x, 
+            "x":tempTreeSprite[i].position.x,
             "y":tempTreeSprite[i].position.y,
             "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0],
             "meta": {
@@ -341,7 +340,7 @@ function renderInitialTrees(data){
         }  //———————————T R E E 2 (PERMANENT) ————————————!
         else if (data[i]["treetype"] == treeType.TREE2) {
             let tree = createSprite(data[i]["x"],data[i]["y"],imageTree2Width,imageTree2Height)
-    
+
             tree.addAnimation('tree2_permanent', imageTree2);
             tree.addAnimation('tree2_hover', imageTree2_hover);
 
@@ -352,7 +351,7 @@ function renderInitialTrees(data){
             tree.onMouseOver = function(){
                 tree.changeAnimation('tree2_hover');
                 isOnHover = true;
-                hovered_tree = data[i];                
+                hovered_tree = data[i];
                 cursor('pointer');
             }
 
@@ -381,7 +380,7 @@ function renderInitialTrees(data){
             tree.onMouseOver = function(){
                 tree.changeAnimation('tree3_hover');
                 isOnHover = true;
-                hovered_tree = data[i];                
+                hovered_tree = data[i];
                 cursor('pointer');
             }
 
@@ -574,25 +573,25 @@ function draw(){
     textSize(13);
 
     if(isDebugMode){
-    text("Select State: " + currentSelectState, 20 , 20, 200, 100); 
-    text("Placed State: " +currentPlacedState, 20 , 40, 200, 100); 
-    text("Tree State: " +currentTree, 20 , 60, 200, 100); 
-    text("Toggle Debug with CONTROL key ", 20 , 80, 200, 100); 
+    text("Select State: " + currentSelectState, 20 , 20, 200, 100);
+    text("Placed State: " +currentPlacedState, 20 , 40, 200, 100);
+    text("Tree State: " +currentTree, 20 , 60, 200, 100);
+    text("Toggle Debug with CONTROL key ", 20 , 80, 200, 100);
     }
 
     if(isOnHover){
 
             //NAME
             textSize(13);
-            text("$" + hovered_tree.meta.payment_data, hovered_tree.x + imageTree1Width/2, hovered_tree.y - 20, 150, 100); 
+            text("$" + hovered_tree.meta.payment_data, hovered_tree.x + imageTree1Width/2, hovered_tree.y - 20, 150, 100);
 
             //NAME
             textSize(18);
-            text(hovered_tree.meta.name, hovered_tree.x + imageTree1Width/2, hovered_tree.y, 250, 100); 
+            text(hovered_tree.meta.name, hovered_tree.x + imageTree1Width/2, hovered_tree.y, 250, 100);
             //Comment
             textSize(12);
             text(hovered_tree.meta.comment, hovered_tree.x + imageTree1Width/2, hovered_tree.y + 30, 250, 100);
-           
+
         }
 
 }
@@ -600,7 +599,7 @@ function draw(){
 function keyPressed() {
     if (keyCode === CONTROL) {
     isDebugMode = !isDebugMode;
-    } 
+    }
   }
 
 
