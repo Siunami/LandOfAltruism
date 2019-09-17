@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 
 const fs = require('fs');
+const stripe = require('stripe')('sk_test_xpUx2VIlQOfVAtnqn7cjs0IX');
 
 // var bodyParser = require('body-parser')
 
@@ -10,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());       // to support JSON-encoded bodies
 app.use(express.urlencoded());
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 let server = app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
 
@@ -48,3 +49,14 @@ app.get('/getTrees', function(req, res){
     // res.send(getSavedData())
     res.send(allTrees)
 })
+
+// Route for handing stripe payment
+app.get('/checkout/:amount', async (req, res) => {
+    stripe.paymentIntents.create({
+        amount: req.param("amount") * 100,
+        currency: 'usd',
+      }).then(function(intent){
+        console.log(intent)
+        res.send({ client_secret: intent.client_secret });
+      })
+});
