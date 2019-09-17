@@ -56,6 +56,9 @@ margin-right: 10vw;
 padding: 0 1.5vw 0 1.5vw;
 }
 
+#controls h2{
+	margin: 0 0 0 0 !important;
+}
 
 #controls .treeButton{
 	border-radius: 5px;
@@ -63,19 +66,90 @@ padding: 0 1.5vw 0 1.5vw;
 	height:100px;
 	weight:100px;
 }
-#controls .metaInput{
-	border-radius: 5px;
-	border: 5px solid #fff;
+#controls .metaInput .name{
+	background: #EBF4B3;
+	border: 3px solid #000000;
+	box-sizing: border-box;
+	border-radius: 13px;
+	width: 138.32px;
+	height: 44px;
+	font-family: VT323;
+font-style: normal;
+font-weight: normal;
+font-size: 32px;
+line-height: 32px;
+display: flex;
+align-items: center;
+
 }
+/* #controls .metaInput .name::placeholder{
+	background: #EBF4B3;
+border: 3px solid #000000;
+box-sizing: border-box;
+border-radius: 13px;
+
+} */
+
+
+
 #controls .donateButton{
 	border-radius: 5px;
-	border: 3px solid #fff;
+	width: 196px;
+	height: 60px;
+	font-family: VT323;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 42px;
+	line-height: 42px;
+	text-align: center;
+	background: #EBF4B3;
+	border: 3px solid #000000;
+	box-sizing: border-box;
+	border-radius: 16px;
+}
+#controls .donateButton:hover{
+ background-color: #C5E480;
 }
 
 .numberAlign{
 	max-width: 30px;
+	font-family: VT323;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 42px;
+	margin-top: 0px;
+	padding-top: 0px;
+	border-top: 0px;
 }
 
+nav{
+	background-color: #C5E480;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	position: fixed;
+	top: 23px;
+	right: 28px;
+	left: 90vw;
+	border: 2.27582px solid #000000;
+	box-sizing: border-box;
+	box-shadow: 0px 14.2239px 0px rgba(0, 0, 0, 0.63);
+	border-radius: 18.2066px;
+ color: #000000;
+ font-family: VT323;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 23.8961px;
+	line-height: 24px;
+	text-align: center;
+	letter-spacing: 0.15em;
+
+
+
+
+}
 
 #slider {
 	position: relative;
@@ -97,7 +171,7 @@ padding: 0 1.5vw 0 1.5vw;
 }
 
 #download:hover {
-	background-color: #d2d2d0;
+	background-color: ##C5E480;
 }
 
 .nestedLayout{
@@ -114,7 +188,7 @@ padding: 0 1.5vw 0 1.5vw;
 
 .myTree1{
 	background-color: #EBF4B3;
-	background-image: url("tree1.png");
+	background-image: url("assets/tree2.png");
 	background-repeat: no-repeat;
 	min-width: 74px;
 	border-radius:13px;
@@ -124,14 +198,14 @@ padding: 0 1.5vw 0 1.5vw;
 	background-size: cover; /* Resize the background image to cover the entire container */
 }
 .myTree1:hover{
-	background-color: red;
+	background-color: #C5E480;
 
 }
 
 
 .myTree2{
 	background-color: #EBF4B3;
-	background-image: url("tree2.png");
+	background-image: url("assets/tree1.png");
 	background-repeat: no-repeat;
 	min-width: 74px;
 	border-radius:13px;
@@ -142,13 +216,13 @@ padding: 0 1.5vw 0 1.5vw;
 
 }
 .myTree2:hover{
-	background-color: red;
+	background-color: #C5E480;
 
 }
 
 .myTree3{
 	background-color: #EBF4B3;
-	background-image: url("tree3_001.png");
+	background-image: url("assets/tree3.png");
 	background-repeat: no-repeat;
 	min-width: 74px;
 	border-radius:13px;
@@ -159,7 +233,7 @@ padding: 0 1.5vw 0 1.5vw;
 
 }
 .myTree3:hover{
-	background-color: red;
+	background-color: #C5E480;
 
 }
 

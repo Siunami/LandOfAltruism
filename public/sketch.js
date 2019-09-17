@@ -230,18 +230,18 @@ function setup() {
     nameInput = createInput("");
     nameInput.class("name")
     nameInput.parent("nameInput")
-    nameInput.attribute("value","CaptainSparkles")
+    nameInput.attribute("value","Name")
 
     urlInput = createInput("");
     urlInput.class("name")
     urlInput.parent("urlInput")
-    urlInput.attribute("value","https://tinyfactories.space")
+    urlInput.attribute("value","URL")
 
 
     commentInput = createInput("");
     commentInput.class("name")
     commentInput.parent("commentInput")
-    commentInput.attribute("value","I love planting trees so much! Keep it going")
+    commentInput.attribute("value","Comment")
 
 
     var canvas = createCanvas(windowWidth,windowHeight);
@@ -249,7 +249,7 @@ function setup() {
     canvas.parent('canvas-holder');
     //Activates the tree planting function
     canvas.mouseClicked(mouseHandle)
-    background(51);
+    background('#E5E5E5');
     ////////////
 
     //   socket = io.connect('http://localhost:3000');
@@ -556,7 +556,7 @@ function mouseHandle(){
 
 
 function draw(){
-    background(51);
+    background('#E5E5E5');
 
     if (currentSelectState == selectedState.SELECTED){
         mouseSprite.velocity.x = (mouseX-mouseSprite.position.x)/10;
