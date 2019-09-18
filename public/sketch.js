@@ -60,7 +60,7 @@ let imageTree1Height = 67;
 
 let imageTree2;
 let imageTree2Width = 50;
-let imageTree2Height = 72;
+let imageTree2Height = 50;
 
 let imageTree3;
 let imageTree3Width = 50;
@@ -68,24 +68,27 @@ let imageTree3Height = 72;
 
 function preload(){
     imageTree1 = loadImage('assets/tree1.png');
-    imageTree1_hover = loadImage('tree1_hover.png');
-    imageTree1_temp = loadImage('tree1_temp.png');
-    imageTree1_delete = loadImage('tree1_temp_del.png');
+    imageTree1_hover = loadImage('assets/tree1_hover.png');
+    imageTree1_temp = loadImage('assets/tree1_temp.png');
+    imageTree1_delete = loadImage('assets/tree1_temp_del.png');
 
     imageTree2 = loadImage('assets/tree2.png');
-    imageTree2_hover = loadImage('tree2_hover.png');
-    imageTree2_temp = loadImage('tree2_temp.png');
-    imageTree2_delete = loadImage('tree2_temp_del.png');
+    imageTree2_hover = loadImage('assets/tree2_hover.png');
+    imageTree2_temp = loadImage('assets/tree2_temp.png');
+    imageTree2_delete = loadImage('assets/tree2_temp_del.png');
 
     imageTree3 = loadImage('assets/tree3.png');
-    imageTree3_ani1 = loadImage('tree3_001.png');
-    imageTree3_ani2 = loadImage('tree3_002.png');
-    imageTree3_ani3 = loadImage('tree3_003.png');
-    imageTree3_ani4 = loadImage('tree3_004.png');
+    imageTree3_ani1 = loadImage('assets/tree3_001.png');
+    imageTree3_ani2 = loadImage('assets/tree3_002.png');
+    imageTree3_ani3 = loadImage('assets/tree3_003.png');
+    imageTree3_ani4 = loadImage('assets/tree3_004.png');
 
-    imageTree3_hover = loadImage('tree3_hover.png');
-    imageTree3_temp = loadImage('tree3_temp.png');
-    imageTree3_delete = loadImage('tree3_temp_del.png');
+    imageTree3_hover = loadImage('assets/tree3_hover.png');
+    imageTree3_temp = loadImage('assets/tree3_temp.png');
+    imageTree3_delete = loadImage('assets/tree3_temp_del.png');
+
+    imageCursor = loadImage('assets/shovel.png');
+
 }
 
 
@@ -96,6 +99,8 @@ function setup() {
     tempTreeSprite = new Group();
     permanentTreeSprite = new Group();
     mouseSprite = createSprite(-50,-50);
+    noCursor();
+
 
     // PROBLEM: Two people trying to create a tree on the same spot.
 
@@ -267,7 +272,9 @@ function createMouseSprite(){
     mouseSprite.addImage('tree2',imageTree2_temp);
     mouseSprite.addImage('tree3',imageTree3_temp);
     mouseSprite.setCollider('rectangle',0,0,25,25);
-    cursor(CROSS);
+    // cursor.addImage('cursor',imageCursor);
+    //('assets/shovel.png')
+    // cursor('imageCursor');
     // mouseSprite.setCollider('circle',0,0,10);
     mouseSprite.debug = isDebugMode;
 }
@@ -562,6 +569,8 @@ function mouseHandle(){
 function draw(){
     background('#edf7ec');
     image(map, 0, 0, windowWidth,windowHeight);
+    cursor('assets/shovel.png'); //Weiwei Here
+
 
 
     if (currentSelectState == selectedState.SELECTED){
@@ -586,6 +595,7 @@ function draw(){
     }
 
     if(isOnHover){
+            fill(0, 5, 55);
 
             //NAME
             textSize(13);
