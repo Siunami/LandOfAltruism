@@ -22,6 +22,7 @@ var style = {
     }
   };
 
+  
 var cardElement = elements.create('card',{
     style:style
 });
