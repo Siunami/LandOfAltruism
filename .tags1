@@ -4,39 +4,340 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-body	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^body {$/;"	function	line:3
-h1 h2 h3 p	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^h1 h2 h3 p {$/;"	function	line:11
-#wrapper	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#wrapper {}$/;"	function	line:15
-#canvas-holder	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#canvas-holder {$/;"	function	line:17
-canvas	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^canvas {$/;"	function	line:21
-.row	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.row {$/;"	function	line:26
-.column	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.column {$/;"	function	line:32
-#controls	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#controls {$/;"	function	line:37
-#controls h2	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#controls h2 {$/;"	function	line:53
-#controls .treeButton	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#controls .treeButton {$/;"	function	line:57
-#controls .metaInput .name	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#controls .metaInput .name {$/;"	function	line:64
-/* #controls .metaInput .name::placeholder	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^\/* #controls .metaInput .name::placeholder{$/;"	function	line:80
-#controls .donateButton	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#controls .donateButton {$/;"	function	line:87
-#controls .donateButton:hover	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#controls .donateButton:hover {$/;"	function	line:103
-#donateContainer	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#donateContainer {$/;"	function	line:107
-.numberAlign	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.numberAlign {$/;"	function	line:111
-nav	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^nav {$/;"	function	line:122
-.metaInputAll	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.metaInputAll {$/;"	function	line:147
-.itIsALine	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.itIsALine {$/;"	function	line:151
-.paddingUI	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.paddingUI {$/;"	function	line:156
-#slider	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#slider {$/;"	function	line:161
-#download	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#download {$/;"	function	line:166
-#download:hover	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#download:hover {$/;"	function	line:180
-.nestedLayout	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.nestedLayout {$/;"	function	line:184
-.nestedElements	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.nestedElements {$/;"	function	line:192
-.myTree1	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.myTree1 {$/;"	function	line:197
-.myTree1:hover	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.myTree1:hover {$/;"	function	line:209
-.myTree2	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.myTree2 {$/;"	function	line:213
-.myTree2:hover	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.myTree2:hover {$/;"	function	line:225
-.myTree3	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.myTree3 {$/;"	function	line:229
-.myTree3:hover	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.myTree3:hover {$/;"	function	line:241
-/* #controls .treeButton	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^\/* #controls .treeButton{$/;"	function	line:245
-.Selected	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.Selected {$/;"	function	line:251
-.ElementsModal--modal-content	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.ElementsModal--modal-content {$/;"	function	line:255
-@media screen and (min-width: 800px)	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^@media screen and (min-width: 800px) {$/;"	function	line:266
-.column	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^  .column {$/;"	function	line:267
+html	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^<html>$/;"	function	line:2
+head	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^<head>$/;"	function	line:4
+meta	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <meta charset="UTF-8">$/;"	function	line:5
+meta	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <meta name="author" content="Matthew Siu">$/;"	function	line:6
+title	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <title>Drawing Board<\/title>$/;"	function	line:7
+script	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <script src="libraries\/p5.js" type="text\/javascript"><\/script>$/;"	function	line:9
+script	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <script src="libraries\/p5.dom.js" type="text\/javascript"><\/script>$/;"	function	line:10
+script	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <script src="libraries\/p5.sound.js" type="text\/javascript"><\/script>$/;"	function	line:11
+script	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <script src="libraries\/p5.play.js" type="text\/javascript"><\/script>$/;"	function	line:12
+script	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <script src="https:\/\/cdn.socket.io\/socket.io-1.4.5.js"><\/script>$/;"	function	line:13
+script	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <script src="sketch.js" type="text\/javascript"><\/script>$/;"	function	line:14
+link	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <link href="https:\/\/fonts.googleapis.com\/css?family=Roboto:400,500" rel="stylesheet">$/;"	function	line:16
+link	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <link rel="stylesheet" type="text\/css" href="index.css">$/;"	function	line:17
+link	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <link rel="stylesheet" type="text\/css" href="elements-modal.css">$/;"	function	line:18
+body	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^<body>$/;"	function	line:21
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <div class="ElementsModal--modal">$/;"	function	line:22
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^    <div class="ElementsModal--modal-content">$/;"	function	line:23
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^      <div class="ElementsModal--top-banner">$/;"	function	line:24
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^        <div class="ElementsModal--sales-info">$/;"	function	line:25
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^          <div class="ElementsModal--top">$/;"	function	line:26
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <div class="ElementsModal--company">Tiny Factories<\/div>$/;"	function	line:27
+button	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <button class="ElementsModal--close" onClick="toggleElementsModalVisibility()">$/;"	function	line:28
+svg	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^              <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink">$/;"	function	line:29
+defs	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                <defs>$/;"	function	line:30
+g	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                <g id="Payment-recipes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">$/;"	function	line:35
+g	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                  <g id="Elements-Popup" transform="translate(-816.000000, -97.000000)">$/;"	function	line:36
+g	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                    <g id="close-btn" transform="translate(816.000000, 97.000000)">$/;"	function	line:37
+circle	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <circle id="Oval" fill-opacity="0.3" fill="#AEAEAE" cx="10" cy="10" r="10"><\/circle>$/;"	function	line:38
+mask	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <mask id="mask-2" fill="white">$/;"	function	line:39
+use	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                        <use xlink:href="#path-1"><\/use>$/;"	function	line:40
+use	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <use id="Mask" fill-opacity="0.5" fill="#FFFFFF" opacity="0.5" xlink:href="#path-1"><\/use>$/;"	function	line:42
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^          <div class="ElementsModal--price ElementsModal--details" id="card-total">$0.00<\/div>$/;"	function	line:51
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^      <div class="ElementsModal--payment-details">$/;"	function	line:56
+form	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^        <form class="ElementsModal--payment-form" id="payment-form">$/;"	function	line:57
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^          <div class="form-row">$/;"	function	line:58
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <div class="ElementsModal--forms">$/;"	function	line:59
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^              <div class="ElementsModal--form">$/;"	function	line:60
+label	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                <label for="ElementsModal--card-element">$/;"	function	line:61
+span	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                  <span class="ElementsModal--form-label spacer">Card details<\/span>$/;"	function	line:62
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                  <div class="StripeElement" id="card-element">$/;"	function	line:63
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                <div id="card-errors" class="ElementsModal--error-message" role="alert"><\/div>$/;"	function	line:68
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^              <div class="ElementsModal--form">$/;"	function	line:70
+label	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                <label class="select">$/;"	function	line:71
+span	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                  <span class="ElementsModal--form-label spacer">Country or region<\/span>$/;"	function	line:72
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                  <div id="country" class="ElementsModal--form-select">$/;"	function	line:73
+select	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                    <select name="country" autocomplete="billing country" aria-label="Country or region">$/;"	function	line:74
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AF">Afghanistan<\/option>$/;"	function	line:75
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AX">Åland Islands<\/option>$/;"	function	line:76
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AL">Albania<\/option>$/;"	function	line:77
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="DZ">Algeria<\/option>$/;"	function	line:78
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AD">Andorra<\/option>$/;"	function	line:79
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AO">Angola<\/option>$/;"	function	line:80
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AI">Anguilla<\/option>$/;"	function	line:81
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AQ">Antarctica<\/option>$/;"	function	line:82
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AG">Antigua &amp; Barbuda<\/option>$/;"	function	line:83
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AR">Argentina<\/option>$/;"	function	line:84
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AM">Armenia<\/option>$/;"	function	line:85
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AW">Aruba<\/option>$/;"	function	line:86
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AC">Ascension Island<\/option>$/;"	function	line:87
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AU">Australia<\/option>$/;"	function	line:88
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AT">Austria<\/option>$/;"	function	line:89
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AZ">Azerbaijan<\/option>$/;"	function	line:90
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BS">Bahamas<\/option>$/;"	function	line:91
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BH">Bahrain<\/option>$/;"	function	line:92
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BD">Bangladesh<\/option>$/;"	function	line:93
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BB">Barbados<\/option>$/;"	function	line:94
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BY">Belarus<\/option>$/;"	function	line:95
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BE">Belgium<\/option>$/;"	function	line:96
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BZ">Belize<\/option>$/;"	function	line:97
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BJ">Benin<\/option>$/;"	function	line:98
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BM">Bermuda<\/option>$/;"	function	line:99
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BT">Bhutan<\/option>$/;"	function	line:100
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BO">Bolivia<\/option>$/;"	function	line:101
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BA">Bosnia &amp; Herzegovina<\/option>$/;"	function	line:102
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BW">Botswana<\/option>$/;"	function	line:103
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BV">Bouvet Island<\/option>$/;"	function	line:104
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BR">Brazil<\/option>$/;"	function	line:105
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="IO">British Indian Ocean Territory<\/option>$/;"	function	line:106
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="VG">British Virgin Islands<\/option>$/;"	function	line:107
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BN">Brunei<\/option>$/;"	function	line:108
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BG">Bulgaria<\/option>$/;"	function	line:109
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BF">Burkina Faso<\/option>$/;"	function	line:110
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BI">Burundi<\/option>$/;"	function	line:111
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="KH">Cambodia<\/option>$/;"	function	line:112
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CM">Cameroon<\/option>$/;"	function	line:113
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CA">Canada<\/option>$/;"	function	line:114
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CV">Cape Verde<\/option>$/;"	function	line:115
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BQ">Caribbean Netherlands<\/option>$/;"	function	line:116
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="KY">Cayman Islands<\/option>$/;"	function	line:117
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CF">Central African Republic<\/option>$/;"	function	line:118
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TD">Chad<\/option>$/;"	function	line:119
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CL">Chile<\/option>$/;"	function	line:120
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CN">China<\/option>$/;"	function	line:121
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CO">Colombia<\/option>$/;"	function	line:122
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="KM">Comoros<\/option>$/;"	function	line:123
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CG">Congo - Brazzaville<\/option>$/;"	function	line:124
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CD">Congo - Kinshasa<\/option>$/;"	function	line:125
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CK">Cook Islands<\/option>$/;"	function	line:126
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CR">Costa Rica<\/option>$/;"	function	line:127
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CI">Côte d’Ivoire<\/option>$/;"	function	line:128
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="HR">Croatia<\/option>$/;"	function	line:129
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CW">Curaçao<\/option>$/;"	function	line:130
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CY">Cyprus<\/option>$/;"	function	line:131
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CZ">Czechia<\/option>$/;"	function	line:132
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="DK">Denmark<\/option>$/;"	function	line:133
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="DJ">Djibouti<\/option>$/;"	function	line:134
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="DM">Dominica<\/option>$/;"	function	line:135
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="DO">Dominican Republic<\/option>$/;"	function	line:136
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="EC">Ecuador<\/option>$/;"	function	line:137
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="EG">Egypt<\/option>$/;"	function	line:138
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SV">El Salvador<\/option>$/;"	function	line:139
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GQ">Equatorial Guinea<\/option>$/;"	function	line:140
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="ER">Eritrea<\/option>$/;"	function	line:141
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="EE">Estonia<\/option>$/;"	function	line:142
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="ET">Ethiopia<\/option>$/;"	function	line:143
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="FK">Falkland Islands<\/option>$/;"	function	line:144
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="FO">Faroe Islands<\/option>$/;"	function	line:145
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="FJ">Fiji<\/option>$/;"	function	line:146
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="FI">Finland<\/option>$/;"	function	line:147
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="FR">France<\/option>$/;"	function	line:148
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GF">French Guiana<\/option>$/;"	function	line:149
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PF">French Polynesia<\/option>$/;"	function	line:150
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TF">French Southern Territories<\/option>$/;"	function	line:151
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GA">Gabon<\/option>$/;"	function	line:152
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GM">Gambia<\/option>$/;"	function	line:153
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GE">Georgia<\/option>$/;"	function	line:154
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="DE">Germany<\/option>$/;"	function	line:155
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GH">Ghana<\/option>$/;"	function	line:156
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GI">Gibraltar<\/option>$/;"	function	line:157
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GR">Greece<\/option>$/;"	function	line:158
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GL">Greenland<\/option>$/;"	function	line:159
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GD">Grenada<\/option>$/;"	function	line:160
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GP">Guadeloupe<\/option>$/;"	function	line:161
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GU">Guam<\/option>$/;"	function	line:162
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GT">Guatemala<\/option>$/;"	function	line:163
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GG">Guernsey<\/option>$/;"	function	line:164
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GN">Guinea<\/option>$/;"	function	line:165
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GW">Guinea-Bissau<\/option>$/;"	function	line:166
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GY">Guyana<\/option>$/;"	function	line:167
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="HT">Haiti<\/option>$/;"	function	line:168
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="HN">Honduras<\/option>$/;"	function	line:169
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="HK">Hong Kong SAR China<\/option>$/;"	function	line:170
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="HU">Hungary<\/option>$/;"	function	line:171
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="IS">Iceland<\/option>$/;"	function	line:172
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="IN">India<\/option>$/;"	function	line:173
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="ID">Indonesia<\/option>$/;"	function	line:174
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="IR">Iran<\/option>$/;"	function	line:175
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="IQ">Iraq<\/option>$/;"	function	line:176
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="IE">Ireland<\/option>$/;"	function	line:177
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="IM">Isle of Man<\/option>$/;"	function	line:178
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="IL">Israel<\/option>$/;"	function	line:179
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="IT">Italy<\/option>$/;"	function	line:180
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="JM">Jamaica<\/option>$/;"	function	line:181
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="JP">Japan<\/option>$/;"	function	line:182
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="JE">Jersey<\/option>$/;"	function	line:183
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="JO">Jordan<\/option>$/;"	function	line:184
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="KZ">Kazakhstan<\/option>$/;"	function	line:185
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="KE">Kenya<\/option>$/;"	function	line:186
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="KI">Kiribati<\/option>$/;"	function	line:187
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="XK">Kosovo<\/option>$/;"	function	line:188
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="KW">Kuwait<\/option>$/;"	function	line:189
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="KG">Kyrgyzstan<\/option>$/;"	function	line:190
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="LA">Laos<\/option>$/;"	function	line:191
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="LV">Latvia<\/option>$/;"	function	line:192
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="LB">Lebanon<\/option>$/;"	function	line:193
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="LS">Lesotho<\/option>$/;"	function	line:194
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="LR">Liberia<\/option>$/;"	function	line:195
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="LY">Libya<\/option>$/;"	function	line:196
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="LI">Liechtenstein<\/option>$/;"	function	line:197
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="LT">Lithuania<\/option>$/;"	function	line:198
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="LU">Luxembourg<\/option>$/;"	function	line:199
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MO">Macau SAR China<\/option>$/;"	function	line:200
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MK">Macedonia<\/option>$/;"	function	line:201
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MG">Madagascar<\/option>$/;"	function	line:202
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MW">Malawi<\/option>$/;"	function	line:203
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MY">Malaysia<\/option>$/;"	function	line:204
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MV">Maldives<\/option>$/;"	function	line:205
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="ML">Mali<\/option>$/;"	function	line:206
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MT">Malta<\/option>$/;"	function	line:207
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MQ">Martinique<\/option>$/;"	function	line:208
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MR">Mauritania<\/option>$/;"	function	line:209
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MU">Mauritius<\/option>$/;"	function	line:210
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="YT">Mayotte<\/option>$/;"	function	line:211
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MX">Mexico<\/option>$/;"	function	line:212
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MD">Moldova<\/option>$/;"	function	line:213
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MC">Monaco<\/option>$/;"	function	line:214
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MN">Mongolia<\/option>$/;"	function	line:215
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="ME">Montenegro<\/option>$/;"	function	line:216
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MS">Montserrat<\/option>$/;"	function	line:217
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MA">Morocco<\/option>$/;"	function	line:218
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MZ">Mozambique<\/option>$/;"	function	line:219
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MM">Myanmar (Burma)<\/option>$/;"	function	line:220
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="NA">Namibia<\/option>$/;"	function	line:221
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="NR">Nauru<\/option>$/;"	function	line:222
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="NP">Nepal<\/option>$/;"	function	line:223
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="NL">Netherlands<\/option>$/;"	function	line:224
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="NC">New Caledonia<\/option>$/;"	function	line:225
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="NZ">New Zealand<\/option>$/;"	function	line:226
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="NI">Nicaragua<\/option>$/;"	function	line:227
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="NE">Niger<\/option>$/;"	function	line:228
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="NG">Nigeria<\/option>$/;"	function	line:229
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="NU">Niue<\/option>$/;"	function	line:230
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="NO">Norway<\/option>$/;"	function	line:231
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="OM">Oman<\/option>$/;"	function	line:232
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PK">Pakistan<\/option>$/;"	function	line:233
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PS">Palestinian Territories<\/option>$/;"	function	line:234
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PA">Panama<\/option>$/;"	function	line:235
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PG">Papua New Guinea<\/option>$/;"	function	line:236
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PY">Paraguay<\/option>$/;"	function	line:237
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PE">Peru<\/option>$/;"	function	line:238
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PH">Philippines<\/option>$/;"	function	line:239
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PN">Pitcairn Islands<\/option>$/;"	function	line:240
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PL">Poland<\/option>$/;"	function	line:241
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PT">Portugal<\/option>$/;"	function	line:242
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PR">Puerto Rico<\/option>$/;"	function	line:243
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="QA">Qatar<\/option>$/;"	function	line:244
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="RE">Réunion<\/option>$/;"	function	line:245
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="RO">Romania<\/option>$/;"	function	line:246
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="RU">Russia<\/option>$/;"	function	line:247
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="RW">Rwanda<\/option>$/;"	function	line:248
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="WS">Samoa<\/option>$/;"	function	line:249
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SM">San Marino<\/option>$/;"	function	line:250
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="ST">São Tomé &amp; Príncipe<\/option>$/;"	function	line:251
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SA">Saudi Arabia<\/option>$/;"	function	line:252
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SN">Senegal<\/option>$/;"	function	line:253
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="RS">Serbia<\/option>$/;"	function	line:254
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SC">Seychelles<\/option>$/;"	function	line:255
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SL">Sierra Leone<\/option>$/;"	function	line:256
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SG">Singapore<\/option>$/;"	function	line:257
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SX">Sint Maarten<\/option>$/;"	function	line:258
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SK">Slovakia<\/option>$/;"	function	line:259
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SI">Slovenia<\/option>$/;"	function	line:260
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SB">Solomon Islands<\/option>$/;"	function	line:261
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SO">Somalia<\/option>$/;"	function	line:262
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="ZA">South Africa<\/option>$/;"	function	line:263
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GS">South Georgia &amp; South Sandwich Islands<\/option>$/;"	function	line:264
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="KR">South Korea<\/option>$/;"	function	line:265
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SS">South Sudan<\/option>$/;"	function	line:266
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="ES">Spain<\/option>$/;"	function	line:267
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="LK">Sri Lanka<\/option>$/;"	function	line:268
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="BL">St. Barthélemy<\/option>$/;"	function	line:269
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SH">St. Helena<\/option>$/;"	function	line:270
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="KN">St. Kitts &amp; Nevis<\/option>$/;"	function	line:271
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="LC">St. Lucia<\/option>$/;"	function	line:272
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="MF">St. Martin<\/option>$/;"	function	line:273
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="PM">St. Pierre &amp; Miquelon<\/option>$/;"	function	line:274
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="VC">St. Vincent &amp; Grenadines<\/option>$/;"	function	line:275
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SR">Suriname<\/option>$/;"	function	line:276
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SJ">Svalbard &amp; Jan Mayen<\/option>$/;"	function	line:277
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SZ">Swaziland<\/option>$/;"	function	line:278
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="SE">Sweden<\/option>$/;"	function	line:279
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="CH">Switzerland<\/option>$/;"	function	line:280
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TW">Taiwan<\/option>$/;"	function	line:281
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TJ">Tajikistan<\/option>$/;"	function	line:282
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TZ">Tanzania<\/option>$/;"	function	line:283
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TH">Thailand<\/option>$/;"	function	line:284
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TL">Timor-Leste<\/option>$/;"	function	line:285
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TG">Togo<\/option>$/;"	function	line:286
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TK">Tokelau<\/option>$/;"	function	line:287
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TO">Tonga<\/option>$/;"	function	line:288
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TT">Trinidad &amp; Tobago<\/option>$/;"	function	line:289
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TA">Tristan da Cunha<\/option>$/;"	function	line:290
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TN">Tunisia<\/option>$/;"	function	line:291
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TR">Turkey<\/option>$/;"	function	line:292
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TM">Turkmenistan<\/option>$/;"	function	line:293
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TC">Turks &amp; Caicos Islands<\/option>$/;"	function	line:294
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="TV">Tuvalu<\/option>$/;"	function	line:295
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="UG">Uganda<\/option>$/;"	function	line:296
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="UA">Ukraine<\/option>$/;"	function	line:297
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="AE">United Arab Emirates<\/option>$/;"	function	line:298
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="GB">United Kingdom<\/option>$/;"	function	line:299
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="US" selected="selected">United States<\/option>$/;"	function	line:300
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="UY">Uruguay<\/option>$/;"	function	line:301
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="UZ">Uzbekistan<\/option>$/;"	function	line:302
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="VU">Vanuatu<\/option>$/;"	function	line:303
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="VA">Vatican City<\/option>$/;"	function	line:304
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="VE">Venezuela<\/option>$/;"	function	line:305
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="VN">Vietnam<\/option>$/;"	function	line:306
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="WF">Wallis &amp; Futuna<\/option>$/;"	function	line:307
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="EH">Western Sahara<\/option>$/;"	function	line:308
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="YE">Yemen<\/option>$/;"	function	line:309
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="ZM">Zambia<\/option>$/;"	function	line:310
+option	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                      <option value="ZW">Zimbabwe<\/option>$/;"	function	line:311
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^              <div class="ElementsModal--form">$/;"	function	line:316
+input	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                <input type="hidden" name="amount" value="${amount}" \/>$/;"	function	line:317
+input	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                <input type="hidden" name="currency" value="${content.currency}" \/>$/;"	function	line:318
+input	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                <input type="hidden" name="description" value="${content.productName}" \/>$/;"	function	line:319
+button	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                <button class="ElementsModal--pay-button" id="pay-amount">Pay ${amount}<\/button>$/;"	function	line:320
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^              <div class="footer ElementsModal--footer-text">$/;"	function	line:323
+a	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^                <a class="ElementsModal--footer-text" href="stripe.com">Terms and Conditions.<\/a>$/;"	function	line:325
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <div id="wrapper">$/;"	function	line:333
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^    <div id="canvas-holder">$/;"	function	line:334
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^    <div class="row" id="controls">$/;"	function	line:337
+nav	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^      <nav class="navUi">$/;"	function	line:338
+img	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^      <img src="" alt="">$/;"	function	line:342
+p	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^      <p>25000 dontatd to  ooooo<\/p>$/;"	function	line:343
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^      <div class="column">$/;"	function	line:345
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^        <div class="row paddingUI">$/;"	function	line:346
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^          <div class="column numberAlign">$/;"	function	line:347
+h	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <h2>1<\/h2>$/;"	function	line:348
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^          <div class="column metaInputAll">$/;"	function	line:350
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <div class="itIsALine"><\/div>$/;"	function	line:351
+h	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <h2>Select tree and plant<\/h2>$/;"	function	line:353
+br	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <br \/>$/;"	function	line:354
+span	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <span id="tree1"><\/span><span id="tree1"><\/span>$/;"	function	line:355
+span	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <span id="tree1"><\/span><span id="tree2"><\/span>$/;"	function	line:356
+span	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <span id="tree1"><\/span><span id="tree3"><\/span>$/;"	function	line:357
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^      <div class="column">$/;"	function	line:362
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^        <div class="row paddingUI">$/;"	function	line:363
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^          <div class="column numberAlign">$/;"	function	line:364
+h	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <h2>2<\/h2>$/;"	function	line:365
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^          <div class="column metaInputAll">$/;"	function	line:367
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <div class="itIsALine"><\/div>$/;"	function	line:368
+h	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <h2>Fill out your tree tag<\/h2>$/;"	function	line:369
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <div class="same-row">$/;"	function	line:370
+span	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^              <span class=metaInput id="nameInput"><\/span>$/;"	function	line:371
+span	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^              <span class=metaInput id="urlInput"><\/span>$/;"	function	line:372
+span	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <span class=metaInput id="commentInput"><\/span>$/;"	function	line:374
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^      <div class="column">$/;"	function	line:378
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^        <div class="row paddingUI">$/;"	function	line:379
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^          <div class="column numberAlign">$/;"	function	line:380
+h	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <h2>3<\/h2>$/;"	function	line:381
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^          <div class="column metaInputAll">$/;"	function	line:383
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <div class="itIsALine"><\/div>$/;"	function	line:384
+h	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <h2>Make your donation<\/h2>$/;"	function	line:385
+br	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <br \/>$/;"	function	line:386
+span	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <span id="donateContainer">$/;"	function	line:387
+button	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^              <button value="donate" class="donate donateButton">$/;"	function	line:388
+p	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^            <p>Learn more about how we donate<\/p>$/;"	function	line:392
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^        <div id="error-message"><\/div>$/;"	function	line:397
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^        <div class="">$/;"	function	line:402
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^        <div class="nestedElements">$/;"	function	line:410
+div	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^        <div class="nestedElements">$/;"	function	line:417
+script	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <script src="https:\/\/js.stripe.com\/v3\/"><\/script>$/;"	function	line:430
+script	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <script src=".\/js\/stripe.js" type="text\/javascript"><\/script>$/;"	function	line:431
+script	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^  <script>$/;"	function	line:432
+saveCanvas	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.html	/^    function saveCanvas() {$/;"	function	line:433

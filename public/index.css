@@ -27,6 +27,7 @@ canvas {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+	vertical-align: bottom;
 }
 
 .column {
@@ -61,20 +62,36 @@ canvas {
   weight: 100px;
 }
 
+.same-row {
+	display: flex;
+  flex-direction: row;
+	padding: 10px 0px;
+}
+
+
 #controls .metaInput .name {
   background: #EBF4B3;
   border: 3px solid #000000;
   box-sizing: border-box;
   border-radius: 13px;
-  width: 138.32px;
   height: 44px;
+	width: 138.32px;
   font-family: VT323;
   font-style: normal;
   font-weight: normal;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 32px;
   display: flex;
   align-items: center;
+	padding-left: 10px;
+}
+
+#nameInput {
+	padding-right: 5px;
+}
+
+#commentInput {
+	width:80% !important;
 }
 
 /* #controls .metaInput .name::placeholder{
@@ -146,6 +163,9 @@ nav {
 
 .metaInputAll {
   padding-top: 1.5vh;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .itIsALine {
@@ -155,7 +175,6 @@ nav {
 
 .paddingUI {
   padding-top: .5vh;
-  padding-left: .8VW;
 }
 
 #slider {
