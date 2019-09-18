@@ -566,9 +566,7 @@ function mouseHandle(){
 function draw(){
     background('#edf7ec');
     image(map, 0, 0, windowWidth,windowHeight);
-    cursor('assets/shovel.png'); //Weiwei Here
-
-
+    cursor('assets/shovel.png'); 
 
     if (currentSelectState == selectedState.SELECTED){
         mouseSprite.velocity.x = (mouseX-mouseSprite.position.x)/10;
@@ -593,6 +591,7 @@ function draw(){
 
     if(isOnHover){
             fill(0, 5, 55);
+            cursor('pointer'); 
 
             //NAME
             textSize(13);

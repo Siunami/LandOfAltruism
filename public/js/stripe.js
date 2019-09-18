@@ -74,14 +74,17 @@ function sendTrees(){
             }
         })
     }
-
     return sendTreeList;
 }
 
 
 
 donateButton.addEventListener("click",function(){
+
+    //only fire when there is temporary tree placed
+    if(currentPlacedState == placedState.TEMP_PLACED){
     toggleElementsModalVisibility();
+    }
 })
 
 var form = document.getElementById("payment-form");
