@@ -5,6 +5,7 @@ var socket;
 var slider;
 var sizecounter;
 
+let map; // Declare variable 'img'.
 
 //State Switcher
 
@@ -66,17 +67,17 @@ let imageTree3Width = 50;
 let imageTree3Height = 72;
 
 function preload(){
-    imageTree1 = loadImage('tree1.png');
+    imageTree1 = loadImage('assets/tree1.png');
     imageTree1_hover = loadImage('tree1_hover.png');
     imageTree1_temp = loadImage('tree1_temp.png');
     imageTree1_delete = loadImage('tree1_temp_del.png');
 
-    imageTree2 = loadImage('tree2.png');
+    imageTree2 = loadImage('assets/tree2.png');
     imageTree2_hover = loadImage('tree2_hover.png');
     imageTree2_temp = loadImage('tree2_temp.png');
     imageTree2_delete = loadImage('tree2_temp_del.png');
 
-    imageTree3 = loadImage('tree3_001.png');
+    imageTree3 = loadImage('assets/tree3.png');
     imageTree3_ani1 = loadImage('tree3_001.png');
     imageTree3_ani2 = loadImage('tree3_002.png');
     imageTree3_ani3 = loadImage('tree3_003.png');
@@ -249,7 +250,9 @@ function setup() {
     canvas.parent('canvas-holder');
     //Activates the tree planting function
     canvas.mouseClicked(mouseHandle)
-    background('#E5E5E5');
+    background('#edf7ec');
+    map = loadImage('assets/map.png'); // Load the image
+
     ////////////
 
     //   socket = io.connect('http://localhost:3000');
@@ -557,7 +560,9 @@ function mouseHandle(){
 
 
 function draw(){
-    background('#E5E5E5');
+    background('#edf7ec');
+    image(map, 0, 0, windowWidth,windowHeight);
+
 
     if (currentSelectState == selectedState.SELECTED){
         mouseSprite.velocity.x = (mouseX-mouseSprite.position.x)/10;

@@ -110,9 +110,13 @@ border-radius: 13px;
 #controls .donateButton:hover{
  background-color: #C5E480;
 }
+#donateContainer{
+	padding-top: 2.5vh;
+
+}
 
 .numberAlign{
-	max-width: 30px;
+	max-width: 45px;
 	font-family: VT323;
 	font-style: normal;
 	font-weight: normal;
@@ -149,6 +153,21 @@ nav{
 
 
 
+}
+
+.metaInputAll{
+	padding-top: 1.5vh;
+}
+.itIsALine{
+	border-top: 3px solid #000000;
+	width: 300px
+
+}
+
+
+.paddingUI{
+	padding-top: .5vh;
+	padding-left: .8VW;
 }
 
 #slider {
@@ -188,7 +207,7 @@ nav{
 
 .myTree1{
 	background-color: #EBF4B3;
-	background-image: url("assets/tree2.png");
+	background-image: url("assets/tree1.png");
 	background-repeat: no-repeat;
 	min-width: 74px;
 	border-radius:13px;
@@ -205,7 +224,7 @@ nav{
 
 .myTree2{
 	background-color: #EBF4B3;
-	background-image: url("assets/tree1.png");
+	background-image: url("assets/tree2.png");
 	background-repeat: no-repeat;
 	min-width: 74px;
 	border-radius:13px;
@@ -251,6 +270,24 @@ nav{
 .Selected{
 	background-color: green;
 }
+
+
+
+.ElementsModal--modal-content{
+	background: #C5E480;
+	border: 2.27582px solid #000000;
+	box-sizing: border-box;
+	box-shadow: 0px 14.2239px 0px rgba(0, 0, 0, 0.63);
+	border-radius: 18.2066px;
+	font-family: VT323;
+font-style: normal;
+font-weight: normal;
+
+}
+
+
+
+
 
 
 
