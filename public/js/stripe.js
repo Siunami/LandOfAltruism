@@ -4,6 +4,33 @@ var PUBLIC_KEY = "pk_test_dpshPpu0W1VyYyw1hI39OGKS";
 
 var stripe = Stripe(PUBLIC_KEY);
 
+// var paymentRequest = stripe.paymentRequest({
+//     country: 'CA',
+//     currency: 'cad',
+//     total: {
+//       label: 'Demo total',
+//       amount: 1000,
+//     },
+//     requestPayerName: true,
+//     requestPayerEmail: true,
+//   });
+
+// var elements2 = stripe.elements();
+// var prButton = elements2.create('paymentRequestButton', {
+//     paymentRequest: paymentRequest,
+// });
+
+// // Check the availability of the Payment Request API first.
+// paymentRequest.canMakePayment().then(function(result) {
+//     if (result) {
+//         prButton.mount('#payment-request-button');
+//     } else {
+//         document.getElementById('payment-request-button').style.display = 'none';
+//     }
+// });
+
+// prButton.mount("#payment-request-button")
+
 var elements = stripe.elements();
 
 var style = {
@@ -25,6 +52,7 @@ var style = {
 var cardElement = elements.create('card',{
     style:style
 });
+
 cardElement.mount('#card-element');
 
 var donateButton = document.getElementsByClassName("donate")[0]

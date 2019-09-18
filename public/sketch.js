@@ -5,6 +5,7 @@ var socket;
 var slider;
 var sizecounter;
 
+var controlsHEIGHT = 100;
 
 //State Switcher
 
