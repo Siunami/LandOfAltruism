@@ -560,7 +560,7 @@ function mouseHandle(){
         currentTree = treeType.NONE;
         currentPlacedState = placedState.TEMP_PLACED;
     }
-}
+}``
 
 
 function draw(){

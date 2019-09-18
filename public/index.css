@@ -1,30 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
 
-
 body {
-	padding: 0px;
-	margin: 0px;
-	font-family: 'VT323', monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
-	color: #333;
-	background-color: #e2e2e0;
-}
-h1 h2 h3 p{
- text-align: left;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'VT323', monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #333;
+  background-color: #e2e2e0;
 }
 
-
-
-#wrapper {
+h1 h2 h3 p {
+  text-align: left;
 }
+
+#wrapper {}
 
 #canvas-holder {
-	/* margin: 20px auto; */
+  /* margin: 20px auto; */
 }
 
 canvas {
-	/* border-radius: 8px; */
-	width:100vw;
+  /* border-radius: 8px; */
+  width: 100vw;
 }
 
 .row {
@@ -35,53 +31,52 @@ canvas {
 
 .column {
   flex-basis: 100%;
-	/* border-top: 5px solid red; */
+  /* border-top: 5px solid red; */
 }
 
-
-
-#controls{
-position:fixed;
-bottom:-50px;
-height:250px;
-width:80vw;
-align-content: center;
-border-width: 4px;
-border-style: solid;
-border-color: #000;
-border-radius: 25px;
-background:#90C64F;
-margin-left: 10vw;
-margin-right: 10vw;
-padding: 0 1.5vw 0 1.5vw;
+#controls {
+  position: fixed;
+  bottom: -50px;
+  height: 250px;
+  width: 80vw;
+  align-content: center;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #000;
+  border-radius: 25px;
+  background: #90C64F;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  padding: 0 1.5vw 0 1.5vw;
 }
 
-#controls h2{
-	margin: 0 0 0 0 !important;
+#controls h2 {
+  margin: 0 0 0 0 !important;
 }
 
-#controls .treeButton{
-	border-radius: 5px;
-	border: 5px solid #000;
-	height:100px;
-	weight:100px;
+#controls .treeButton {
+  border-radius: 5px;
+  border: 5px solid #000;
+  height: 100px;
+  weight: 100px;
 }
-#controls .metaInput .name{
-	background: #EBF4B3;
-	border: 3px solid #000000;
-	box-sizing: border-box;
-	border-radius: 13px;
-	width: 138.32px;
-	height: 44px;
-	font-family: VT323;
-font-style: normal;
-font-weight: normal;
-font-size: 32px;
-line-height: 32px;
-display: flex;
-align-items: center;
 
+#controls .metaInput .name {
+  background: #EBF4B3;
+  border: 3px solid #000000;
+  box-sizing: border-box;
+  border-radius: 13px;
+  width: 138.32px;
+  height: 44px;
+  font-family: VT323;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
 }
+
 /* #controls .metaInput .name::placeholder{
 	background: #EBF4B3;
 border: 3px solid #000000;
@@ -89,174 +84,163 @@ box-sizing: border-box;
 border-radius: 13px;
 
 } */
-
-
-
-#controls .donateButton{
-	border-radius: 5px;
-	width: 196px;
-	height: 60px;
-	font-family: VT323;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 42px;
-	line-height: 42px;
-	text-align: center;
-	background: #EBF4B3;
-	border: 3px solid #000000;
-	box-sizing: border-box;
-	border-radius: 16px;
-}
-#controls .donateButton:hover{
- background-color: #C5E480;
-}
-#donateContainer{
-	padding-top: 2.5vh;
-
+#controls .donateButton {
+  border-radius: 5px;
+  width: 196px;
+  height: 60px;
+  font-family: VT323;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 42px;
+  line-height: 42px;
+  text-align: center;
+  background: #EBF4B3;
+  border: 3px solid #000000;
+  box-sizing: border-box;
+  border-radius: 16px;
 }
 
-.numberAlign{
-	max-width: 45px;
-	font-family: VT323;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 42px;
-	margin-top: 0px;
-	padding-top: 0px;
-	border-top: 0px;
+#controls .donateButton:hover {
+  background-color: #C5E480;
 }
 
-nav{
-	background-color: #C5E480;
-	color: white;
-	padding: 16px 20px;
-	border: none;
-	cursor: pointer;
-	opacity: 0.8;
-	position: fixed;
-	top: 23px;
-	right: 28px;
-	left: 90vw;
-	border: 2.27582px solid #000000;
-	box-sizing: border-box;
-	box-shadow: 0px 14.2239px 0px rgba(0, 0, 0, 0.63);
-	border-radius: 18.2066px;
- color: #000000;
- font-family: VT323;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 23.8961px;
-	line-height: 24px;
-	text-align: center;
-	letter-spacing: 0.15em;
-
-
-
-
+#donateContainer {
+  padding-top: 2.5vh;
 }
 
-.metaInputAll{
-	padding-top: 1.5vh;
+.numberAlign {
+  max-width: 45px;
+  font-family: VT323;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 42px;
+  margin-top: 0px;
+  padding-top: 0px;
+  border-top: 0px;
 }
-.itIsALine{
-	border-top: 3px solid #000000;
-	width: 300px
 
+nav {
+  background-color: #C5E480;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  top: 23px;
+  right: 28px;
+  left: 90vw;
+  border: 2.27582px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 14.2239px 0px rgba(0, 0, 0, 0.63);
+  border-radius: 18.2066px;
+  color: #000000;
+  font-family: VT323;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 23.8961px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.15em;
 }
 
+.metaInputAll {
+  padding-top: 1.5vh;
+}
 
-.paddingUI{
-	padding-top: .5vh;
-	padding-left: .8VW;
+.itIsALine {
+  border-top: 3px solid #000000;
+  width: 300px
+}
+
+.paddingUI {
+  padding-top: .5vh;
+  padding-left: .8VW;
 }
 
 #slider {
-	position: relative;
-	top: 2px;
+  position: relative;
+  top: 2px;
 }
 
 #download {
-	color: #666;
-	font-size: 13px;
-	font-weight: 500;
-	letter-spacing: 0.5px;
-	cursor: pointer;
-	transition: 150ms ease-in-out;
-	border-radius: 4px;
-	padding: 6px 12px;
-	position: relative;
-	top: -1px;
-	margin-left: 30px;
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+  border-radius: 4px;
+  padding: 6px 12px;
+  position: relative;
+  top: -1px;
+  margin-left: 30px;
 }
 
 #download:hover {
-	background-color: ##C5E480;
+  background-color: ##C5E480;
 }
 
-.nestedLayout{
-	margin: 80px 0 80px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.nestedElements{
-	padding: 40px;
-  position: relative;
+.nestedLayout {
+  margin: 80px 0 80px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.myTree1{
-	background-color: #EBF4B3;
-	background-image: url("assets/tree1.png");
-	background-repeat: no-repeat;
-	min-width: 74px;
-	border-radius:13px;
-	border: 3px solid #000;
-	min-height:82px;
-
-	background-size: cover; /* Resize the background image to cover the entire container */
-}
-.myTree1:hover{
-	background-color: #C5E480;
-
+.nestedElements {
+  padding: 40px;
+  position: relative;
 }
 
-
-.myTree2{
-	background-color: #EBF4B3;
-	background-image: url("assets/tree2.png");
-	background-repeat: no-repeat;
-	min-width: 74px;
-	border-radius:13px;
-	border: 3px solid #000;
-	min-height:82px;
-
-	background-size: cover; /* Resize the background image to cover the entire container */
-
-}
-.myTree2:hover{
-	background-color: #C5E480;
-
+.myTree1 {
+  background-color: #EBF4B3;
+  background-image: url("assets/tree1.png");
+  background-repeat: no-repeat;
+  min-width: 74px;
+  border-radius: 13px;
+  border: 3px solid #000;
+  min-height: 82px;
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
 }
 
-.myTree3{
-	background-color: #EBF4B3;
-	background-image: url("assets/tree3.png");
-	background-repeat: no-repeat;
-	min-width: 74px;
-	border-radius:13px;
-	border: 3px solid #000;
-	min-height:82px;
-
-	background-size: cover; /* Resize the background image to cover the entire container */
-
-}
-.myTree3:hover{
-	background-color: #C5E480;
-
+.myTree1:hover {
+  background-color: #C5E480;
 }
 
+.myTree2 {
+  background-color: #EBF4B3;
+  background-image: url("assets/tree2.png");
+  background-repeat: no-repeat;
+  min-width: 74px;
+  border-radius: 13px;
+  border: 3px solid #000;
+  min-height: 82px;
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+}
 
+.myTree2:hover {
+  background-color: #C5E480;
+}
+
+.myTree3 {
+  background-color: #EBF4B3;
+  background-image: url("assets/tree3.png");
+  background-repeat: no-repeat;
+  min-width: 74px;
+  border-radius: 13px;
+  border: 3px solid #000;
+  min-height: 82px;
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+}
+
+.myTree3:hover {
+  background-color: #C5E480;
+}
 
 /* #controls .treeButton{
 	border-radius: 5px;
@@ -264,32 +248,20 @@ nav{
 	height:100px;
 	weight:100px;
 } */
-
-
-
-.Selected{
-	background-color: green;
+.Selected {
+  background-color: green;
 }
 
-
-
-.ElementsModal--modal-content{
-	background: #C5E480;
-	border: 2.27582px solid #000000;
-	box-sizing: border-box;
-	box-shadow: 0px 14.2239px 0px rgba(0, 0, 0, 0.63);
-	border-radius: 18.2066px;
-	font-family: VT323;
-font-style: normal;
-font-weight: normal;
-
+.ElementsModal--modal-content {
+  background: #C5E480;
+  border: 2.27582px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 14.2239px 0px rgba(0, 0, 0, 0.63);
+  border-radius: 18.2066px;
+  font-family: VT323;
+  font-style: normal;
+  font-weight: normal;
 }
-
-
-
-
-
-
 
 @media screen and (min-width: 800px) {
   .column {
