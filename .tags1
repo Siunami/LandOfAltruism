@@ -4,63 +4,39 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-socket	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^var socket;$/;"	variable	line:4
-slider	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^var slider;$/;"	variable	line:5
-sizecounter	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^var sizecounter;$/;"	variable	line:6
-const.NONE_SELECTED	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^const selectedState = {$/;"	property	line:12
-const.SELECTED	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^    'NONE_SELECTED': 'none_selected',$/;"	property	line:13
-const.NONE_PLACED	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^const placedState = {$/;"	property	line:17
-const.TEMP_PLACED	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^    "NONE_PLACED":"none_placed",$/;"	property	line:18
-const.NONE	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^const treeType = {$/;"	property	line:22
-const.TREE1	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^    'NONE':'none',$/;"	property	line:23
-const.TREE2	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^    'TREE1': 'tree1',$/;"	property	line:24
-const.TREE3	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^    'TREE2': 'tree2',$/;"	property	line:25
-const.tree1	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^const treePrices = {$/;"	property	line:29
-const.tree2	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^    "tree1": 3,$/;"	property	line:30
-const.tree3	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^    "tree2": 3,$/;"	property	line:31
-preload	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function preload(){$/;"	function	line:69
-preload	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function preload(){$/;"	function	line:69
-setup	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function setup() {$/;"	function	line:95
-setup	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function setup() {$/;"	function	line:95
-createMouseSprite	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function createMouseSprite(){$/;"	function	line:269
-createMouseSprite	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function createMouseSprite(){$/;"	function	line:269
-sendTrees	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function sendTrees(){$/;"	function	line:284
-sendTrees	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function sendTrees(){$/;"	function	line:284
-renderInitialTrees	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function renderInitialTrees(data){$/;"	function	line:308
-onMouseOver	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMouseOver = function(){$/;"	function	line:328
-tree.onMouseOver	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.debug = isDebugMode;$/;"	function	line:326
-onMouseOut	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMouseOut = function(){$/;"	function	line:336
-tree.onMouseOut	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^              }$/;"	function	line:334
-onMousePressed	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMousePressed = function(){$/;"	function	line:343
-tree.onMousePressed	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            }$/;"	function	line:341
-onMouseOver	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMouseOver = function(){$/;"	function	line:361
-onMouseOut	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMouseOut = function(){$/;"	function	line:368
-onMousePressed	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMousePressed = function(){$/;"	function	line:374
-onMouseOver	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMouseOver = function(){$/;"	function	line:390
-onMouseOut	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMouseOut = function(){$/;"	function	line:397
-onMousePressed	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMousePressed = function(){$/;"	function	line:403
-renderInitialTrees	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function renderInitialTrees(data){$/;"	function	line:308
-fetchServerData	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function fetchServerData(){$/;"	function	line:414
-fetchServerData	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function fetchServerData(){$/;"	function	line:414
-windowResized	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function windowResized(){$/;"	function	line:436
-windowResized	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function windowResized(){$/;"	function	line:436
-updateBuyButton	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function updateBuyButton(){$/;"	function	line:440
-updateBuyButton	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function updateBuyButton(){$/;"	function	line:440
-mouseHandle	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function mouseHandle(){$/;"	function	line:455
-onMouseOver	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMouseOver = function(){$/;"	function	line:469
-onMouseOut	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMouseOut = function(){$/;"	function	line:473
-onMousePressed	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMousePressed = function(){$/;"	function	line:477
-mouseHandle	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function mouseHandle(){$/;"	function	line:455
-onMouseOver	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMouseOver = function(){$/;"	function	line:500
-onMouseOut	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMouseOut = function(){$/;"	function	line:504
-onMousePressed	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMousePressed = function(){$/;"	function	line:508
-onMouseOver	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMouseOver = function(){$/;"	function	line:530
-onMouseOut	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMouseOut = function(){$/;"	function	line:534
-onMousePressed	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^            tree.onMousePressed = function(){$/;"	function	line:538
-draw	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function draw(){$/;"	function	line:569
-draw	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function draw(){$/;"	function	line:569
-keyPressed	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function keyPressed() {$/;"	function	line:615
-keyPressed	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^function keyPressed() {$/;"	function	line:615
-checkBoundsX	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^\/\/ function checkBoundsX(currPos){$/;"	function	line:631
-checkBoundsY	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^\/\/ function checkBoundsY(currPos){$/;"	function	line:638
-draw	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/sketch.js	/^\/\/ function draw() {$/;"	function	line:645
+body	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^body {$/;"	function	line:3
+h1 h2 h3 p	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^h1 h2 h3 p {$/;"	function	line:11
+#wrapper	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#wrapper {}$/;"	function	line:15
+#canvas-holder	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#canvas-holder {$/;"	function	line:17
+canvas	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^canvas {$/;"	function	line:21
+.row	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.row {$/;"	function	line:26
+.column	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.column {$/;"	function	line:32
+#controls	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#controls {$/;"	function	line:37
+#controls h2	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#controls h2 {$/;"	function	line:53
+#controls .treeButton	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#controls .treeButton {$/;"	function	line:57
+#controls .metaInput .name	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#controls .metaInput .name {$/;"	function	line:64
+/* #controls .metaInput .name::placeholder	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^\/* #controls .metaInput .name::placeholder{$/;"	function	line:80
+#controls .donateButton	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#controls .donateButton {$/;"	function	line:87
+#controls .donateButton:hover	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#controls .donateButton:hover {$/;"	function	line:103
+#donateContainer	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#donateContainer {$/;"	function	line:107
+.numberAlign	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.numberAlign {$/;"	function	line:111
+nav	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^nav {$/;"	function	line:122
+.metaInputAll	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.metaInputAll {$/;"	function	line:147
+.itIsALine	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.itIsALine {$/;"	function	line:151
+.paddingUI	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.paddingUI {$/;"	function	line:156
+#slider	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#slider {$/;"	function	line:161
+#download	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#download {$/;"	function	line:166
+#download:hover	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^#download:hover {$/;"	function	line:180
+.nestedLayout	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.nestedLayout {$/;"	function	line:184
+.nestedElements	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.nestedElements {$/;"	function	line:192
+.myTree1	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.myTree1 {$/;"	function	line:197
+.myTree1:hover	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.myTree1:hover {$/;"	function	line:209
+.myTree2	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.myTree2 {$/;"	function	line:213
+.myTree2:hover	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.myTree2:hover {$/;"	function	line:225
+.myTree3	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.myTree3 {$/;"	function	line:229
+.myTree3:hover	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.myTree3:hover {$/;"	function	line:241
+/* #controls .treeButton	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^\/* #controls .treeButton{$/;"	function	line:245
+.Selected	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.Selected {$/;"	function	line:251
+.ElementsModal--modal-content	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^.ElementsModal--modal-content {$/;"	function	line:255
+@media screen and (min-width: 800px)	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^@media screen and (min-width: 800px) {$/;"	function	line:266
+.column	/Users/stars/Documents/Weiwei/website/LandOfAltruism/public/index.css	/^  .column {$/;"	function	line:267
