@@ -430,13 +430,14 @@ function windowResized(){
 function updateBuyButton(){
     let total = document.getElementById("total");
     let cardTotal = document.getElementById("card-total");
+    let payAmount = document.getElementById("pay-amount");
 
     let amount = 0;
     for (let i = 0; i < tempTreeSprite.length;i++){
         let treeType = tempTreeSprite[i].getAnimationLabel().split("_")[0]
         amount += treePrices[treeType];
     }
-
+    payAmount.innerHTML = "Pay $" + amount + ".00";
     cardTotal.innerHTML = "$" + amount + ".00";
     total.innerHTML = amount;
 }
