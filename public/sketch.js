@@ -1,5 +1,5 @@
 //trigger debug mode
-let isDebugMode = true;
+let isDebugMode = false;
 
 var socket;
 var slider;
@@ -304,8 +304,6 @@ function renderInitialTrees(data){
     for (var i = 0 ; i < length_perm ; i++){
         permanentTreeSprite[0].remove();
     }
-
-
     for (let i in data){
         //———————————T R E E 1 (PERMANENT) ————————————!
         if (data[i]["treetype"] == treeType.TREE1){
@@ -466,7 +464,6 @@ function mouseHandle(){
             tree.onMouseOut = function(){
                 tree.changeAnimation('tree1_temp');
             }
-
             tree.onMousePressed = function(){
                 if (currentSelectState == selectedState.NONE_SELECTED){
                     tree.remove()
