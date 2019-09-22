@@ -58,7 +58,7 @@ function stripePaymentHandler() {
 // Helper function for setup
 function sendTrees(){
     //Convert current tree position into JSON files to send to the server
-
+    console.log("The Tree Data is Sent");
     let sendTreeList = [];
     for (var i = 0 ; i < tempTreeSprite.length ; i++){
         sendTreeList.push({
