@@ -59,7 +59,7 @@ let totalAmount;
 //Loading Images
 let imageTree1;
 let imageTree1Width = 50;
-let imageTree1Height = 67;
+let imageTree1Height = 50;
 
 let imageTree2;
 let imageTree2Width = 50;
@@ -67,7 +67,7 @@ let imageTree2Height = 50;
 
 let imageTree3;
 let imageTree3Width = 50;
-let imageTree3Height = 72;
+let imageTree3Height = 50;
 
 function preload(){
     imageTree1 = loadImage('assets/tree1.png');
@@ -388,7 +388,8 @@ function renderInitialTrees(data){
         } //———————————T R E E 3 (PERMANENT) ————————————!
         else if (data[i]["treetype"] == treeType.TREE3) {
             let tree = createSprite(data[i]["x"],data[i]["y"],imageTree3Width,imageTree3Height)
-            tree.addAnimation('tree3_permanent', imageTree3_ani1,imageTree3_ani2,imageTree3_ani3);
+            //tree.addAnimation('tree3_permanent', imageTree3_ani1,imageTree3_ani2,imageTree3_ani3);
+            tree.addAnimation('tree3_permanent', imageTree3);
             tree.addAnimation('tree3_hover', imageTree3_hover);
 
             tree.setCollider('rectangle',0,0,25,25);
