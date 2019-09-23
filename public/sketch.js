@@ -234,21 +234,24 @@ function setup() {
     })
 
     //////////// USER INPUT ////////
-    nameInput = createInput("");
+    nameInput = createInput("").attribute('placeholder', 'Name');
     nameInput.class("name")
     nameInput.parent("nameInput")
-    nameInput.attribute("value","Name")
 
-    urlInput = createInput("");
+    /*
+    //Delete form on focus
+    nameInput.id("name_input_field")
+    document.getElementById("name_input_field").onfocus = function() { nameInput.attribute("value","")};
+    */
+
+    urlInput = createInput("").attribute('placeholder', 'Web URL');
     urlInput.class("name")
     urlInput.parent("urlInput")
-    urlInput.attribute("value","URL")
-
-
-    commentInput = createInput("");
+  
+    commentInput = createInput("").attribute('placeholder', 'Comment');;
     commentInput.class("name")
     commentInput.parent("commentInput")
-    commentInput.attribute("value","Comment")
+  
 
 
     var canvas = createCanvas(windowWidth,windowHeight);
@@ -263,6 +266,10 @@ function setup() {
 
     //   socket = io.connect('http://localhost:3000');
 }
+
+function clearText() {
+    nameInput.style.backgroundColor = "red";
+  }
 
 let mouseSprite;
 
