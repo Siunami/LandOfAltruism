@@ -70,7 +70,7 @@ function sendTrees(){
                 "date": new Date(),
                 "url":urlInput.value(),
                 "comment":commentInput.value(),
-                "payment_data":50
+                "payment_data":totalAmount
             }
         })
     }

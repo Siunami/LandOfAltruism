@@ -52,6 +52,8 @@ let nameInput;
 let urlInput;
 let commentInput;
 
+let totalAmount;
+
 
 
 //Loading Images
@@ -288,28 +290,28 @@ function createMouseSprite(){
 }
 
 
-// Helper function for setup
-function sendTrees(){
-    //Convert current tree position into JSON files to send to the server
+// // Helper function for setup
+// function sendTrees(){
+//     //Convert current tree position into JSON files to send to the server
 
-    let sendTreeList = [];
-    for (var i = 0 ; i < tempTreeSprite.length ; i++){
-        sendTreeList.push({
-            "x":tempTreeSprite[i].position.x,
-            "y":tempTreeSprite[i].position.y,
-            "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0],
-            "meta": {
-                "name":nameInput.value(),
-                "date": new Date(),
-                "url":urlInput.value(),
-                "comment":commentInput.value(),
-                "payment_data":50
-            }
-        })
-    }
+//     let sendTreeList = [];
+//     for (var i = 0 ; i < tempTreeSprite.length ; i++){
+//         sendTreeList.push({
+//             "x":tempTreeSprite[i].position.x,
+//             "y":tempTreeSprite[i].position.y,
+//             "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0],
+//             "meta": {
+//                 "name":nameInput.value(),
+//                 "date": new Date(),
+//                 "url":urlInput.value(),
+//                 "comment":commentInput.value(),
+//                 "payment_data":10
+//             }
+//         })
+//     }
 
-    return sendTreeList;
-}
+//     return sendTreeList;
+// }
 
 
 
@@ -444,18 +446,18 @@ function windowResized(){
 }
 
 function updateBuyButton(){
+    totalAmount = 0;
     let total = document.getElementById("total");
     let cardTotal = document.getElementById("card-total");
     let payAmount = document.getElementById("pay-amount");
 
-    let amount = 0;
     for (let i = 0; i < tempTreeSprite.length;i++){
         let treeType = tempTreeSprite[i].getAnimationLabel().split("_")[0]
-        amount += treePrices[treeType];
+        totalAmount += treePrices[treeType];
     }
-    payAmount.innerHTML = "Pay $" + amount + ".00";
-    cardTotal.innerHTML = "$" + amount + ".00";
-    total.innerHTML = amount;
+    payAmount.innerHTML = "Pay $" + totalAmount + ".00";
+    cardTotal.innerHTML = "$" + totalAmount + ".00";
+    total.innerHTML = totalAmount;
 }
 
 function mouseHandle(){
@@ -568,7 +570,7 @@ function mouseHandle(){
         currentTree = treeType.NONE;
         currentPlacedState = placedState.TEMP_PLACED;
     }
-}``
+}
 
 
 function draw(){
