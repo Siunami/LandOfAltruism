@@ -26,10 +26,11 @@ const treeType = {
     'TREE3': 'tree3'
 }
 
+//prices for the tree
 const treePrices = {
     "tree1": 3,
-    "tree2": 3,
-    "tree3": 3
+    "tree2": 5,
+    "tree3": 1
 }
 
 let currentSelectState;
@@ -134,7 +135,7 @@ function setup() {
 
     /////// TREE BUTTONS //////
     //——Button : Tree1
-    tree1Button = createButton("");
+    tree1Button = createButton("$"+ treePrices["tree1"]);
     tree1Button.class("myTree1")
     tree1Button.parent("tree1")
     tree1Button.attribute("value","tree1")
@@ -167,7 +168,7 @@ function setup() {
     })
 
     //——Button : Tree2
-    tree2Button = createButton("");
+    tree2Button = createButton("$"+ treePrices["tree2"]);
     tree2Button.class("myTree2")
     tree2Button.parent("tree2")
     tree2Button.attribute("value","tree2")
@@ -200,7 +201,7 @@ function setup() {
     })
 
    //——Button : Tree3
-    tree3Button = createButton("");
+    tree3Button = createButton("$"+ treePrices["tree3"]);
     tree3Button.class("myTree3")
     tree3Button.parent("tree3")
     tree3Button.attribute("value","tree3")

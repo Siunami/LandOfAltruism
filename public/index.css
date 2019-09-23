@@ -223,6 +223,9 @@ nav {
   min-height: 82px;
   background-size: cover;
   /* Resize the background image to cover the entire container */
+  font-family: 'VT323', monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #333;
+  font-size: 27px;
 }
 
 .myTree1:hover {
@@ -239,6 +242,9 @@ nav {
   min-height: 82px;
   background-size: cover;
   /* Resize the background image to cover the entire container */
+  font-family: 'VT323', monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #333;
+  font-size: 27px;
 }
 
 .myTree2:hover {
@@ -255,6 +261,9 @@ nav {
   min-height: 82px;
   background-size: cover;
   /* Resize the background image to cover the entire container */
+  font-family: 'VT323', monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #333;
+  font-size: 27px;
 }
 
 .myTree3:hover {
