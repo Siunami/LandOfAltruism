@@ -604,8 +604,8 @@ function draw(){
             cursor('pointer'); 
 
             //NAME
-            textSize(13);
-            text("$" + hovered_tree.meta.payment_data, hovered_tree.x + imageTree1Width/2, hovered_tree.y - 20, 150, 100);
+            textSize(10);
+            text("Donated $" + hovered_tree.meta.payment_data, hovered_tree.x + imageTree1Width/2, hovered_tree.y - 20, 150, 100);
 
             //NAME
             textSize(18);
