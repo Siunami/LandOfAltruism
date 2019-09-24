@@ -8,6 +8,9 @@ const stripe = require('stripe')('sk_test_xpUx2VIlQOfVAtnqn7cjs0IX');
 
 const PORT = process.env.PORT || 3000;
 
+// Tells node.js to use static front end assets
+app.use(express.static('public'));
+
 app.use(express.json());       // to support JSON-encoded bodies
 app.use(express.urlencoded());
 
@@ -19,8 +22,7 @@ const path = require('path');
 
 var io = require('socket.io')(server);
 
-// Tells node.js to use static front end assets
-app.use(express.static('public'));
+
 
 // Root url returns index.html
 app.get('/',function(req,res) {
