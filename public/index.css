@@ -117,14 +117,22 @@ border-radius: 13px;
   border-radius: 16px;
 }
 
-.donateButtonInactive {
-  opacity: 0.3;
-}
-
-
 #controls .donateButton:hover {
   background-color: #C5E480;
 }
+
+.donateButtonInactive {
+  opacity: 0.3;
+  background: #EBF4B3;
+}
+
+.donateButtonInactive:hover {
+  background: #EBF4B3;
+}
+
+
+
+
 
 #donateContainer {
   padding-top: 2.5vh;
