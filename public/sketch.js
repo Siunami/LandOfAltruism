@@ -26,10 +26,11 @@ const treeType = {
     'TREE3': 'tree3'
 }
 
+//prices for the tree
 const treePrices = {
     "tree1": 3,
-    "tree2": 3,
-    "tree3": 3
+    "tree2": 5,
+    "tree3": 1
 }
 
 let currentSelectState;
@@ -51,12 +52,14 @@ let nameInput;
 let urlInput;
 let commentInput;
 
+let totalAmount;
+
 
 
 //Loading Images
 let imageTree1;
 let imageTree1Width = 50;
-let imageTree1Height = 67;
+let imageTree1Height = 50;
 
 let imageTree2;
 let imageTree2Width = 50;
@@ -64,7 +67,7 @@ let imageTree2Height = 50;
 
 let imageTree3;
 let imageTree3Width = 50;
-let imageTree3Height = 72;
+let imageTree3Height = 50;
 
 function preload(){
     imageTree1 = loadImage('assets/tree1.png');
@@ -134,7 +137,7 @@ function setup() {
 
     /////// TREE BUTTONS //////
     //——Button : Tree1
-    tree1Button = createButton("");
+    tree1Button = createButton("$"+ treePrices["tree1"]);
     tree1Button.class("myTree1")
     tree1Button.parent("tree1")
     tree1Button.attribute("value","tree1")
@@ -167,7 +170,7 @@ function setup() {
     })
 
     //——Button : Tree2
-    tree2Button = createButton("");
+    tree2Button = createButton("$"+ treePrices["tree2"]);
     tree2Button.class("myTree2")
     tree2Button.parent("tree2")
     tree2Button.attribute("value","tree2")
@@ -200,7 +203,7 @@ function setup() {
     })
 
    //——Button : Tree3
-    tree3Button = createButton("");
+    tree3Button = createButton("$"+ treePrices["tree3"]);
     tree3Button.class("myTree3")
     tree3Button.parent("tree3")
     tree3Button.attribute("value","tree3")
@@ -233,21 +236,24 @@ function setup() {
     })
 
     //////////// USER INPUT ////////
-    nameInput = createInput("");
+    nameInput = createInput("").attribute('placeholder', 'Name');
     nameInput.class("name")
     nameInput.parent("nameInput")
-    nameInput.attribute("value","Name")
 
-    urlInput = createInput("");
+    /*
+    //Delete form on focus
+    nameInput.id("name_input_field")
+    document.getElementById("name_input_field").onfocus = function() { nameInput.attribute("value","")};
+    */
+
+    urlInput = createInput("").attribute('placeholder', 'Web URL');
     urlInput.class("name")
     urlInput.parent("urlInput")
-    urlInput.attribute("value","URL")
-
-
-    commentInput = createInput("");
+  
+    commentInput = createInput("").attribute('placeholder', 'Comment');;
     commentInput.class("name")
     commentInput.parent("commentInput")
-    commentInput.attribute("value","Comment")
+  
 
 
     var canvas = createCanvas(windowWidth,windowHeight);
@@ -262,6 +268,10 @@ function setup() {
 
     //   socket = io.connect('http://localhost:3000');
 }
+
+function clearText() {
+    nameInput.style.backgroundColor = "red";
+  }
 
 let mouseSprite;
 
@@ -280,28 +290,28 @@ function createMouseSprite(){
 }
 
 
-// Helper function for setup
-function sendTrees(){
-    //Convert current tree position into JSON files to send to the server
+// // Helper function for setup
+// function sendTrees(){
+//     //Convert current tree position into JSON files to send to the server
 
-    let sendTreeList = [];
-    for (var i = 0 ; i < tempTreeSprite.length ; i++){
-        sendTreeList.push({
-            "x":tempTreeSprite[i].position.x,
-            "y":tempTreeSprite[i].position.y,
-            "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0],
-            "meta": {
-                "name":nameInput.value(),
-                "date": new Date(),
-                "url":urlInput.value(),
-                "comment":commentInput.value(),
-                "payment_data":50
-            }
-        })
-    }
+//     let sendTreeList = [];
+//     for (var i = 0 ; i < tempTreeSprite.length ; i++){
+//         sendTreeList.push({
+//             "x":tempTreeSprite[i].position.x,
+//             "y":tempTreeSprite[i].position.y,
+//             "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0],
+//             "meta": {
+//                 "name":nameInput.value(),
+//                 "date": new Date(),
+//                 "url":urlInput.value(),
+//                 "comment":commentInput.value(),
+//                 "payment_data":10
+//             }
+//         })
+//     }
 
-    return sendTreeList;
-}
+//     return sendTreeList;
+// }
 
 
 
@@ -378,7 +388,8 @@ function renderInitialTrees(data){
         } //———————————T R E E 3 (PERMANENT) ————————————!
         else if (data[i]["treetype"] == treeType.TREE3) {
             let tree = createSprite(data[i]["x"],data[i]["y"],imageTree3Width,imageTree3Height)
-            tree.addAnimation('tree3_permanent', imageTree3_ani1,imageTree3_ani2,imageTree3_ani3);
+            //tree.addAnimation('tree3_permanent', imageTree3_ani1,imageTree3_ani2,imageTree3_ani3);
+            tree.addAnimation('tree3_permanent', imageTree3);
             tree.addAnimation('tree3_hover', imageTree3_hover);
 
             tree.setCollider('rectangle',0,0,25,25);
@@ -436,18 +447,18 @@ function windowResized(){
 }
 
 function updateBuyButton(){
+    totalAmount = 0;
     let total = document.getElementById("total");
     let cardTotal = document.getElementById("card-total");
     let payAmount = document.getElementById("pay-amount");
 
-    let amount = 0;
     for (let i = 0; i < tempTreeSprite.length;i++){
         let treeType = tempTreeSprite[i].getAnimationLabel().split("_")[0]
-        amount += treePrices[treeType];
+        totalAmount += treePrices[treeType];
     }
-    payAmount.innerHTML = "Pay $" + amount + ".00";
-    cardTotal.innerHTML = "$" + amount + ".00";
-    total.innerHTML = amount;
+    payAmount.innerHTML = "Pay $" + totalAmount + ".00";
+    cardTotal.innerHTML = "$" + totalAmount + ".00";
+    total.innerHTML = totalAmount;
 }
 
 function mouseHandle(){
@@ -560,7 +571,7 @@ function mouseHandle(){
         currentTree = treeType.NONE;
         currentPlacedState = placedState.TEMP_PLACED;
     }
-}``
+}
 
 
 function draw(){
@@ -594,8 +605,8 @@ function draw(){
             cursor('pointer'); 
 
             //NAME
-            textSize(13);
-            text("$" + hovered_tree.meta.payment_data, hovered_tree.x + imageTree1Width/2, hovered_tree.y - 20, 150, 100);
+            textSize(10);
+            text("Donated $" + hovered_tree.meta.payment_data, hovered_tree.x + imageTree1Width/2, hovered_tree.y - 20, 150, 100);
 
             //NAME
             textSize(18);
