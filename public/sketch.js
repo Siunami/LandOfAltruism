@@ -1,5 +1,5 @@
 //trigger debug mode
-let isDebugMode = true;
+let isDebugMode = false;
 
 var socket;
 var slider;
