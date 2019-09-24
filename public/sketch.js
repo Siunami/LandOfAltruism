@@ -242,6 +242,7 @@ function setup() {
 
     //////////// USER INPUT ////////
     nameInput = createInput("").attribute('placeholder', 'Name');
+    nameInput.attribute('maxlength',20);
     nameInput.class("name")
     nameInput.parent("nameInput")
 
@@ -255,7 +256,8 @@ function setup() {
     urlInput.class("name")
     urlInput.parent("urlInput")
   
-    commentInput = createInput("").attribute('placeholder', 'Comment');;
+    commentInput = createInput("").attribute('placeholder', 'Comment');
+    commentInput.attribute('maxlength',100);
     commentInput.class("name")
     commentInput.parent("commentInput")
   
