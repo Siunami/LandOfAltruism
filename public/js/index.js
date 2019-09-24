@@ -7,10 +7,11 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+// Default modal visible
+modal.style.visibility = "visible";
+
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
-  console.log(modal);
-  console.log("asdfs")
   modal.style.visibility = "visible";
 }
 
