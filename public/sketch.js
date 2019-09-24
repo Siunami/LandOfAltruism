@@ -1,5 +1,5 @@
 //trigger debug mode
-let isDebugMode = false;
+let isDebugMode = true;
 
 var socket;
 var slider;
@@ -451,6 +451,7 @@ function fetchServerData(){
 // }
 
 function updateBuyButton(){
+    var donateButton = document.getElementsByClassName("donate")[0]
     totalAmount = 0;
     let total = document.getElementById("total");
     let cardTotal = document.getElementById("card-total");
@@ -460,6 +461,13 @@ function updateBuyButton(){
         let treeType = tempTreeSprite[i].getAnimationLabel().split("_")[0]
         totalAmount += treePrices[treeType];
     }
+
+    if (totalAmount == 0){
+        donateButton.classList.add("donateButtonInactive");
+    } else {
+        donateButton.classList.remove("donateButtonInactive");
+    }
+
     payAmount.innerHTML = "Pay $" + totalAmount + ".00";
     cardTotal.innerHTML = "$" + totalAmount + ".00";
     total.innerHTML = totalAmount;
@@ -581,7 +589,8 @@ function mouseHandle(){
 function draw(){
     background('#edf7ec');
     image(map, 0, 0, FIXED_WINDOW_WIDTH,FIXED_WINDOW_HEIGHT);
-    cursor('assets/shovel.png'); 
+    // cursor('assets/shovel.png'); 
+    cursor("default")
 
     if (currentSelectState == selectedState.SELECTED){
         mouseSprite.velocity.x = (mouseX-mouseSprite.position.x)/10;
@@ -598,28 +607,28 @@ function draw(){
     textSize(13);
 
     if(isDebugMode){
-    text("Select State: " + currentSelectState, 20 , 20, 200, 100);
-    text("Placed State: " +currentPlacedState, 20 , 40, 200, 100);
-    text("Tree State: " +currentTree, 20 , 60, 200, 100);
-    text("Toggle Debug with CONTROL key ", 20 , 80, 200, 100);
+        text("Select State: " + currentSelectState, 20 , 20, 200, 100);
+        text("Placed State: " +currentPlacedState, 20 , 40, 200, 100);
+        text("Tree State: " +currentTree, 20 , 60, 200, 100);
+        text("Toggle Debug with CONTROL key ", 20 , 80, 200, 100);
     }
 
     if(isOnHover){
-            fill(0, 5, 55);
-            cursor('pointer'); 
+        fill(0, 5, 55);
+        cursor('pointer'); 
 
-            //NAME
-            textSize(10);
-            text("Donated $" + hovered_tree.meta.payment_data, hovered_tree.x + imageTree1Width/2, hovered_tree.y - 20, 150, 100);
+        //NAME
+        textSize(10);
+        text("Donated $" + hovered_tree.meta.payment_data, hovered_tree.x + imageTree1Width/2, hovered_tree.y - 20, 150, 100);
 
-            //NAME
-            textSize(18);
-            text(hovered_tree.meta.name, hovered_tree.x + imageTree1Width/2, hovered_tree.y, 250, 100);
-            //Comment
-            textSize(12);
-            text(hovered_tree.meta.comment, hovered_tree.x + imageTree1Width/2, hovered_tree.y + 30, 250, 100);
+        //NAME
+        textSize(18);
+        text(hovered_tree.meta.name, hovered_tree.x + imageTree1Width/2, hovered_tree.y, 250, 100);
+        //Comment
+        textSize(12);
+        text(hovered_tree.meta.comment, hovered_tree.x + imageTree1Width/2, hovered_tree.y + 30, 250, 100);
 
-        }
+    }
 
 }
 

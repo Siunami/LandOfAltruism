@@ -61,18 +61,22 @@ function sendTrees(){
     console.log("The Tree Data is Sent");
     let sendTreeList = [];
     for (var i = 0 ; i < tempTreeSprite.length ; i++){
-        sendTreeList.push({
-            "x":tempTreeSprite[i].position.x, 
-            "y":tempTreeSprite[i].position.y,
-            "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0],
-            "meta": {
-                "name":nameInput.value(),
-                "date": new Date(),
-                "url":urlInput.value(),
-                "comment":commentInput.value(),
-                "payment_data":totalAmount
-            }
-        })
+        if (nameInput.value() == "") {
+
+        } else {
+            sendTreeList.push({
+                "x":tempTreeSprite[i].position.x, 
+                "y":tempTreeSprite[i].position.y,
+                "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0],
+                "meta": {
+                    "name":nameInput.value(),
+                    "date": new Date(),
+                    "url":urlInput.value(),
+                    "comment":commentInput.value(),
+                    "payment_data":totalAmount
+                }
+            })
+        }
     }
     return sendTreeList;
 }
