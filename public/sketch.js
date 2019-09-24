@@ -7,8 +7,8 @@ var sizecounter;
 
 let map; // Declare variable 'img'.
 
-let FIXED_WINDOW_WIDTH = 3000;
-let FIXED_WINDOW_HEIGHT = 3000;
+let FIXED_WINDOW_WIDTH = 2500;
+let FIXED_WINDOW_HEIGHT = 1500;
 
 //State Switcher
 

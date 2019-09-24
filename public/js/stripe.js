@@ -61,8 +61,20 @@ function sendTrees(){
     console.log("The Tree Data is Sent");
     let sendTreeList = [];
     for (var i = 0 ; i < tempTreeSprite.length ; i++){
+        console.log(nameInput.value());
         if (nameInput.value() == "") {
-
+            sendTreeList.push({
+                "x":tempTreeSprite[i].position.x, 
+                "y":tempTreeSprite[i].position.y,
+                "treetype":tempTreeSprite[i].getAnimationLabel().split("_")[0],
+                "meta": {
+                    "name":"Guest",
+                    "date": new Date(),
+                    "url":"https://tinyfactories.space",
+                    "comment":"",
+                    "payment_data":totalAmount
+                }
+            })
         } else {
             sendTreeList.push({
                 "x":tempTreeSprite[i].position.x, 
