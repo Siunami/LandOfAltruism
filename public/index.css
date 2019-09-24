@@ -117,6 +117,11 @@ border-radius: 13px;
   border-radius: 16px;
 }
 
+.donateButtonInactive {
+  opacity: 0.3;
+}
+
+
 #controls .donateButton:hover {
   background-color: #C5E480;
 }
