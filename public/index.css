@@ -132,8 +132,6 @@ border-radius: 13px;
 
 
 
-
-
 #donateContainer {
   padding-top: 2.5vh;
 }
@@ -237,8 +235,13 @@ nav {
   background-size: cover;
   /* Resize the background image to cover the entire container */
   font-family: 'VT323', monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  color: #333;
   font-size: 27px;
+  color:black;
+  text-shadow:
+  -1px -1px 0 #EBF4B3,  
+  1px -1px 0#EBF4B3,
+  -1px 1px 0 #EBF4B3,
+   1px 1px 0 #EBF4B3;
 }
 
 .myTree1:hover {
@@ -256,8 +259,13 @@ nav {
   background-size: cover;
   /* Resize the background image to cover the entire container */
   font-family: 'VT323', monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  color: #333;
   font-size: 27px;
+  color:black;
+  text-shadow:
+   -1px -1px 0 #EBF4B3,  
+    1px -1px 0#EBF4B3,
+    -1px 1px 0 #EBF4B3,
+     1px 1px 0 #EBF4B3;
 }
 
 .myTree2:hover {
@@ -275,8 +283,13 @@ nav {
   background-size: cover;
   /* Resize the background image to cover the entire container */
   font-family: 'VT323', monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  color: #333;
   font-size: 27px;
+  color:black;
+  text-shadow:
+  -1px -1px 0 #EBF4B3,  
+  1px -1px 0#EBF4B3,
+  -1px 1px 0 #EBF4B3,
+   1px 1px 0 #EBF4B3;
 }
 
 .myTree3:hover {
