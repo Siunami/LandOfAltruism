@@ -1,5 +1,5 @@
 //trigger debug mode
-let isDebugMode = false;
+let isDebugMode = true;
 
 var socket;
 var slider;
@@ -9,6 +9,9 @@ let map; // Declare variable 'img'.
 
 let FIXED_WINDOW_WIDTH = 2500;
 let FIXED_WINDOW_HEIGHT = 1500;
+
+let COLLISION_BOX_X = 45;
+let COLLISION_BOX_Y = 50;
 
 //State Switcher
 
@@ -283,7 +286,7 @@ function createMouseSprite(){
     mouseSprite.addImage('tree1',imageTree1_temp);
     mouseSprite.addImage('tree2',imageTree2_temp);
     mouseSprite.addImage('tree3',imageTree3_temp);
-    mouseSprite.setCollider('rectangle',0,0,25,25);
+    mouseSprite.setCollider('rectangle',0,0,COLLISION_BOX_X,COLLISION_BOX_Y);
     // cursor.addImage('cursor',imageCursor);
     //('assets/shovel.png')
     // cursor('imageCursor');
@@ -331,7 +334,7 @@ function renderInitialTrees(data){
             tree.addAnimation('tree1_permanent', imageTree1);
             tree.addAnimation('tree1_hover', imageTree1_hover);
 
-            tree.setCollider('rectangle',0,0,25,25);
+            tree.setCollider('rectangle',0,0,COLLISION_BOX_X,COLLISION_BOX_Y);
             // tree.setCollider('circle',0,0,10);
             tree.debug = isDebugMode;
 
@@ -364,7 +367,7 @@ function renderInitialTrees(data){
             tree.addAnimation('tree2_permanent', imageTree2);
             tree.addAnimation('tree2_hover', imageTree2_hover);
 
-            tree.setCollider('rectangle',0,0,25,25);
+            tree.setCollider('rectangle',0,0,COLLISION_BOX_X,COLLISION_BOX_Y);
             // tree.setCollider('circle',0,0,10);
             tree.debug = isDebugMode;
 
@@ -394,7 +397,7 @@ function renderInitialTrees(data){
             tree.addAnimation('tree3_permanent', imageTree3);
             tree.addAnimation('tree3_hover', imageTree3_hover);
 
-            tree.setCollider('rectangle',0,0,25,25);
+            tree.setCollider('rectangle',0,0,COLLISION_BOX_X,COLLISION_BOX_Y);
             // tree.setCollider('circle',0,0,10);
             tree.debug = isDebugMode;
 
@@ -483,7 +486,7 @@ function mouseHandle(){
             tree.addAnimation('tree1_temp', imageTree1_temp);
             tree.addAnimation('tree1_temp_delete', imageTree1_delete);
 
-            tree.setCollider('rectangle',0,0,25,25);
+            tree.setCollider('rectangle',0,0,COLLISION_BOX_X,COLLISION_BOX_Y);
             // tree.setCollider('circle',0,0,10);
             tree.debug = isDebugMode;
 
@@ -513,7 +516,7 @@ function mouseHandle(){
             tree.addAnimation('tree2_temp', imageTree2_temp);
             tree.addAnimation('tree2_temp_delete', imageTree2_delete);
 
-            tree.setCollider('rectangle',0,0,25,25);
+            tree.setCollider('rectangle',0,0,COLLISION_BOX_X,COLLISION_BOX_Y);
             // tree.setCollider('circle',0,0,10);
             tree.debug = isDebugMode;
 
@@ -543,7 +546,7 @@ function mouseHandle(){
             tree.addAnimation('tree3_temp', imageTree3_temp);
             tree.addAnimation('tree3_temp_delete', imageTree3_delete);
 
-            tree.setCollider('rectangle',0,0,25,25);
+            tree.setCollider('rectangle',0,0,COLLISION_BOX_X,COLLISION_BOX_Y);
             // tree.setCollider('circle',0,0,10);
             tree.debug = isDebugMode;
 
