@@ -7,6 +7,9 @@ var sizecounter;
 
 let map; // Declare variable 'img'.
 
+let FIXED_WINDOW_WIDTH = 3000;
+let FIXED_WINDOW_HEIGHT = 3000;
+
 //State Switcher
 
 const selectedState = {
@@ -53,7 +56,6 @@ let urlInput;
 let commentInput;
 
 let totalAmount;
-
 
 
 //Loading Images
@@ -256,7 +258,7 @@ function setup() {
   
 
 
-    var canvas = createCanvas(windowWidth,windowHeight);
+    var canvas = createCanvas(FIXED_WINDOW_WIDTH,FIXED_WINDOW_HEIGHT);
     canvas.class('canvas');
     canvas.parent('canvas-holder');
     //Activates the tree planting function
@@ -442,9 +444,11 @@ function fetchServerData(){
 }
 
 
-function windowResized(){
-    resizeCanvas(windowWidth,(windowHeight)-controlsHEIGHT);
-}
+// Note: For demo, changed to fixed canvas
+
+// function windowResized(){
+//     resizeCanvas(windowWidth,(windowHeight)-controlsHEIGHT);
+// }
 
 function updateBuyButton(){
     totalAmount = 0;
@@ -576,7 +580,7 @@ function mouseHandle(){
 
 function draw(){
     background('#edf7ec');
-    image(map, 0, 0, windowWidth,windowHeight);
+    image(map, 0, 0, FIXED_WINDOW_WIDTH,FIXED_WINDOW_HEIGHT);
     cursor('assets/shovel.png'); 
 
     if (currentSelectState == selectedState.SELECTED){
