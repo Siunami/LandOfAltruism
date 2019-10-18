@@ -114,6 +114,18 @@ box-sizing: border-box;
 border-radius: 13px;
 
 } */
+
+
+#aboutButton {
+  font-family: VT323;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 32px;
+  text-align: center;
+}
+
+
 #controls .donateButton {
   border-radius: 5px;
   width: 196px;
@@ -161,6 +173,9 @@ border-radius: 13px;
 }
 
 nav {
+  
+  display: none;
+
   background-color: #C5E480;
   color: white;
   padding: 16px 20px;

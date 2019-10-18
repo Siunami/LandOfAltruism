@@ -75,6 +75,7 @@ let imageTree3Width = 50;
 let imageTree3Height = 50;
 
 function preload(){
+
     imageTree1 = loadImage('assets/tree1.png');
     imageTree1_hover = loadImage('assets/tree1_hover.png');
     imageTree1_temp = loadImage('assets/tree1_temp.png');
@@ -619,19 +620,28 @@ function draw(){
     }
 
     if(isOnHover){
+
+
+        fill(101, 204, 101, 120);
+        strokeWeight(3);
+        stroke(51);
+        rect(hovered_tree.x + imageTree1Width - 20 , hovered_tree.y - 30, 260, 80, 15, 15, 15, 15);
+        line(hovered_tree.x, hovered_tree.y, hovered_tree.x + imageTree1Width - 20, hovered_tree.y);
+
         fill(0, 5, 55);
         cursor('pointer'); 
 
+        noStroke();
         //NAME
-        textSize(10);
-        text("Donated $" + hovered_tree.meta.payment_data, hovered_tree.x + imageTree1Width/2, hovered_tree.y - 20, 150, 100);
+        textSize(13);
+        text("Donated $" + hovered_tree.meta.payment_data, hovered_tree.x + imageTree1Width, hovered_tree.y - 20, 150, 100);
 
         //NAME
         textSize(18);
-        text(hovered_tree.meta.name, hovered_tree.x + imageTree1Width/2, hovered_tree.y, 250, 100);
+        text(hovered_tree.meta.name, hovered_tree.x + imageTree1Width, hovered_tree.y, 250, 100);
         //Comment
-        textSize(12);
-        text(hovered_tree.meta.comment, hovered_tree.x + imageTree1Width/2, hovered_tree.y + 30, 250, 100);
+        textSize(13);
+        text(hovered_tree.meta.comment, hovered_tree.x + imageTree1Width, hovered_tree.y + 30, 250, 100);
 
     }
 
